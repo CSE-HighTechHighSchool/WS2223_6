@@ -1,3 +1,8 @@
+/* ----------------------------- Bike Diagram CSS ------------------------------------ */
+.red-circle {
+    cursor: pointer;
+}
+
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
