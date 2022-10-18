@@ -1,4 +1,7 @@
 /* ----------------------------- Underline Animation CSS ----------------------------- */
+#navmenu{
+    background-image:url(/img/IMG_8098.jpg)
+}
 .hover-underline-animation {
     display: inline-block;
     position: relative;
