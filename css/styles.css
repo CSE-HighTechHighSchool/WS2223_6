@@ -1,3 +1,92 @@
+/* ----------------------------- Bike Diagram CSS ------------------------------------ */
+.diagram{
+    position: relative;
+}
+
+.diagram-icon {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    border: .5vw solid blue;
+    cursor: pointer;
+    transition: .4s ease-in;
+    background-color: rgb(226, 250, 245);
+    z-index: 0;
+}
+
+.diagram-icon:hover {
+    transform: scale(12, 12);
+    border: .1vw solid blue;
+    z-index: 10;
+}
+
+.diagram-icon p,
+.diagram-icon h4 {
+    text-align: center;
+    font-size: 0;
+    opacity: 0.0;
+    transition: .4s ease-in;
+}
+
+.diagram-icon h4 {
+    padding-top: .1vw;
+    margin-bottom: .1vw;
+    font-weight: bold;
+}
+
+.diagram-icon p {
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
+.diagram-icon:hover p,
+.diagram-icon:hover h4 {
+    opacity: 1.0;
+    font-size: .11vw;
+}
+
+.diagram-icon:hover h4 {
+    font-size: .3vw;
+}
+
+/* ----------------------------- Bike Diagram Icon Positions ------------------------- */
+
+#handlebars {
+    top: 10%;
+    right: 30%;
+}
+
+#wheel {
+    top: 58%;
+    right: 36%;
+}
+
+#brakes {
+    top: 20%;
+    right: 25%;
+}
+
+#seat {
+    top: 21%;
+    right: 70%;
+}
+
+#gears {
+    top: 65%;
+    right: 80%;
+}
+
+#frame {
+    top: 45%;
+    right: 45%;
+}
+
+#pedals {
+    top: 70%;
+    right: 53%;
+}
+
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
