@@ -17,7 +17,7 @@
 
 .diagram-icon:hover {
     transform: scale(12, 12);
-    border: .1em solid blue;
+    border: .1vw solid blue;
     z-index: 10;
 }
 
@@ -30,8 +30,8 @@
 }
 
 .diagram-icon h4 {
-    padding-top: 2px;
-    margin-bottom: 2px;
+    padding-top: .1vw;
+    margin-bottom: .1vw;
     font-weight: bold;
 }
 
@@ -43,11 +43,11 @@
 .diagram-icon:hover p,
 .diagram-icon:hover h4 {
     opacity: 1.0;
-    font-size: .11rem;
+    font-size: .11vw;
 }
 
 .diagram-icon:hover h4 {
-    font-size: .3rem;
+    font-size: .3vw;
 }
 
 /* ----------------------------- Bike Diagram Icon Positions ------------------------- */
