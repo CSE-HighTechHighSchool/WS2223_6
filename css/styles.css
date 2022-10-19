@@ -24,15 +24,25 @@
 }
 
 
-
 .nb-bg-color{
     background-color: rgb(93, 142, 157);
 }
 .footer {
     background-color: rgb(93, 142, 157);
 }
-/* ----------------------------- Timeline CSS ----------------------------- */
+/* ----------------------------- Map CSS ----------------------------- */
 
+#map {
+    height: 800px;
+    /* The height is 400 pixels */
+    /* The width is the width of the web page */
+  }
+.trail-item img {
+    border-radius: 3%;
+}
 
-
-
+.trail-list {
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:800px;
+}
