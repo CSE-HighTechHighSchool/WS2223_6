@@ -1,6 +1,24 @@
 /* ----------------------------- Bike Diagram CSS ------------------------------------ */
-.red-circle {
+.diagram{
+    position: relative;
+}
+
+.diagram-icon {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: .5em solid blue;
     cursor: pointer;
+    transition: .5s ease-in;
+    background-color: rgb(226, 250, 245);
+}
+
+.diagram-icon:hover {
+    transform: scale(10, 10);
+    border: .1em solid blue;
 }
 
 /* ----------------------------- Underline Animation CSS ----------------------------- */
