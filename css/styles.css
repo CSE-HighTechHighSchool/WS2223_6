@@ -39,7 +39,7 @@
 }
  .main-timeline .timeline{
     position:relative;
-    margin-top:-79px
+    margin-top:-75px
     /*connects parts of the line together*/
 }
 .main-timeline .timeline:first-child{
@@ -86,7 +86,7 @@
     
     z-index:1;
     transform: translateY(-5px) translateX(-10px);
-    animation:rotationback 2s linear infinite;
+    animation:rotationforward 2s linear infinite;
     /*creates the timeline icons as a part of a irregular shape  and rotates/translates it so that the icons are alligned*/
 }
 
@@ -155,7 +155,7 @@
     transform:rotate(-135deg);
     border-top-color:#e97e2e;
     border-right-color:#e97e2e;
-    animation:rotationforward 2s linear infinite;
+    animation:rotationback 2s linear infinite;
 
     
     /*rotates each part of the line and change its color*/
