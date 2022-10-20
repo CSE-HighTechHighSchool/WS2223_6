@@ -76,21 +76,20 @@
     z-index:2
      /*configures size and position of timeline elements*/
 }
- .main-timeline .timeline-icon{
+    .main-timeline .timeline-icon{
     width:210px;
-    height:200px;
+    height:210px;
     position:absolute;
     
-    border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
-    border:20px dashed transparent;
-    border-right-color: #f44556;
-    border-top-color:#f44556;
-    z-index:1;
-    transform:rotate(45deg) translateY(-5px) translateX(-10px);
+    border-radius:50%;
+    border:20px dashed #f44556;
     
-
+    z-index:1;
+    transform: translateY(-5px) translateX(-10px);
+    animation:rotationback 2s linear infinite;
     /*creates the timeline icons as a part of a irregular shape  and rotates/translates it so that the icons are alligned*/
 }
+
  .main-timeline .year{
     
     width:110px;
@@ -102,7 +101,7 @@
     font-weight:700;
     color:#f44556;
     text-align:center;
-    transform:rotate(-45deg);
+    
     box-shadow: 0 0 20px rgba(0,0,0,.4);
     /*creates a circle inside the icon for the year. The circle is white and can be seen by its black shadow around it*/ 
 }
@@ -129,6 +128,7 @@
     top:50%;
     left:-20%;
     z-index:-1;
+    
     /*creates the line connecting the box to the timeline and sets it behind the box*/ 
 }
  .main-timeline .title{
@@ -146,7 +146,7 @@
     /*timeline info text adjustment*/
 }
 .main-timeline .timeline:nth-child(2n) .year{
-    transform:rotate(135deg);
+    
     color:#e97e2e;
     /*rotates each year in the line and change its color*/
 
@@ -155,6 +155,8 @@
     transform:rotate(-135deg);
     border-top-color:#e97e2e;
     border-right-color:#e97e2e;
+    animation:rotationforward 2s linear infinite;
+
     
     /*rotates each part of the line and change its color*/
 
@@ -172,3 +174,21 @@
     background:#e97e2e;
     /*moves the connecting line to the right on every other data*/
 }
+
+@keyframes rotationforward {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+    /*creates the rotating animation*/
+  }
+  @keyframes rotationback {
+    from {
+      transform: rotate(359deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
