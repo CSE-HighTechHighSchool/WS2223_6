@@ -28,7 +28,7 @@
     background-color: rgb(93, 142, 157);
 }
 .footer {
-    background-color: rgb(93, 142, 157);
+    background-color: black;
 }
 /* ----------------------------- Map CSS ----------------------------- */
 
@@ -45,4 +45,11 @@
     overflow-x:hidden;
     overflow-y:scroll;
     height:800px;
+}
+.showcase .container {
+    background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mg-4841-1597155372.jpg')
+
+}
+.footer a {
+    color:#fff;
 }
