@@ -46,14 +46,14 @@
     margin-top:15px;
      /*moves the top entry to below the navbar*/
 }
- .main-timeline .timeline-icon,.main-timeline .year{
+ .main-timeline .timeline-icon,.main-timeline .year, .main-time .cover{
     margin:auto;
     position:absolute;
     top:0;
     left:0;
     bottom:0;
-    right:0
-     /*sets the icon and year of the timeline to absolute positioning*/
+    right:0;
+     /*sets the icon, year, and cover of the timeline to absolute positioning*/
 }
 
 .main-timeline .timeline:after{
@@ -85,10 +85,26 @@
     border:20px dashed #f44556;
     
     z-index:1;
-    transform: translateY(-5px) translateX(-10px);
-    animation:rotationforward 2s linear infinite;
-    /*creates the timeline icons as a part of a irregular shape  and rotates/translates it so that the icons are alligned*/
+    
+    animation:rotationforward 5s linear infinite;
+
+    /*creates the timeline icons as a circle and rotates the icon clockwise*/
 }
+ .main-timeline .cover{
+    
+    width:210px;
+    height:118px;
+    position:absolute;
+    background-color:white;
+    border-radius: 150px 150px 0 0;
+    
+    z-index:1;
+    top:50%;
+    left:45%;
+    transform:translate(-50%, -50%) rotate(-90deg);
+    
+   
+ }
 
  .main-timeline .year{
     
@@ -101,8 +117,8 @@
     font-weight:700;
     color:#f44556;
     text-align:center;
-    
     box-shadow: 0 0 20px rgba(0,0,0,.4);
+    z-index:5;
     /*creates a circle inside the icon for the year. The circle is white and can be seen by its black shadow around it*/ 
 }
  .main-timeline .timeline-content{
@@ -155,7 +171,8 @@
     transform:rotate(-135deg);
     border-top-color:#e97e2e;
     border-right-color:#e97e2e;
-    animation:rotationback 2s linear infinite;
+    animation:rotationback 5s linear infinite;
+    z-index:0;
 
     
     /*rotates each part of the line and change its color*/
@@ -173,6 +190,13 @@
     right:-20%;
     background:#e97e2e;
     /*moves the connecting line to the right on every other data*/
+}
+.main-timeline .timeline:nth-child(2n) .cover {
+    transform-origin:center;
+    z-index:0;
+    transform:rotate(90deg) translate(-59px,-12px);
+    
+    
 }
 
 @keyframes rotationforward {
