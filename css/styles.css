@@ -87,6 +87,15 @@
     right: 53%;
 }
 
+/* ----------------------------- Navbar Animation CSS -------------------------------- */
+.nb-bg-color{
+    background-color: #2A6547;
+}
+
+.navbar img {
+    height: 60px;
+}
+
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
@@ -114,9 +123,7 @@
 
 
 
-.nb-bg-color{
-    background-color: rgb(93, 142, 157);
-}
+
 .footer {
     background-color: rgb(93, 142, 157);
 }
