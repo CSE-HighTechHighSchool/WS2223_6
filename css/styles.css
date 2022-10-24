@@ -169,10 +169,9 @@
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon{
     transform:rotate(-135deg);
-    border-top-color:#e97e2e;
-    border-right-color:#e97e2e;
+    border-color:#e97e2e;
     animation:rotationback 5s linear infinite;
-    z-index:0;
+    z-index:2;
 
     
     /*rotates each part of the line and change its color*/
@@ -193,7 +192,7 @@
 }
 .main-timeline .timeline:nth-child(2n) .cover {
     transform-origin:center;
-    z-index:0;
+    z-index:3;
     transform:rotate(90deg) translate(-59px,-12px);
     
     
@@ -206,7 +205,7 @@
     to {
       transform: rotate(359deg);
     }
-    /*creates the rotating animation*/
+    /*creates the rotating forward animation*/
   }
   @keyframes rotationback {
     from {
@@ -215,7 +214,10 @@
     to {
       transform: rotate(0deg);
     }
+        /*creates the rotating backwards animation*/
+
   }
+  /*Makes the website responsive to any size screen*/
   @media only screen and (max-width: 1199px){
     .main-timeline .timeline{ margin-top: -103px; }
     .main-timeline .timeline-content:before{ left: -18%; }
@@ -247,6 +249,9 @@
         margin-bottom: 20px;
         position: relative;
     }
+    .main-timeline .cover{
+        visibility: hidden;
+    }
     
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content{
@@ -268,3 +273,16 @@
         transform: translate(-50%,0);
     }
 }
+/*Controls the Famous People Cards*/
+.about-author,.about-procedure {
+    color: rgb(82, 81, 81);
+}
+/*Creates triangle animation*/
+.card-button {
+    background:white;
+    border:none;
+    transform: var(--flip);
+    transition: transform 250ms linear;
+}
+
+
