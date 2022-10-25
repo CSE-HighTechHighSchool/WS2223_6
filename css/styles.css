@@ -53,3 +53,9 @@
 .footer a {
     color:#fff;
 }
+
+.custom-map {
+    position:relative; 
+    top:-50px; 
+    border:none;
+}
