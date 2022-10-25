@@ -89,8 +89,7 @@
     border:20px dashed #46301a;
     
     z-index:1;
-    
-    animation:rotationforward 5s linear infinite;
+    animation:rotationforward 5s linear 0.8s infinite ;
 
     /*creates the timeline icons as a circle and rotates the icon clockwise*/
 }
@@ -101,7 +100,7 @@
     position:absolute;
     background-color:#bcd6a2;
     border-radius: 150px 150px 0 0;
-    
+    visibility: hidden;
     z-index:1;
     top:50%;
     left:45%;
