@@ -50,7 +50,7 @@
     margin-top:15px;
      /*moves the top entry to below the navbar*/
 }
- .main-timeline .timeline-icon,.main-timeline .year, .main-time .cover{
+ .main-timeline .timeline-icon,.main-timeline .year, .main-timeline .cover{
     margin:auto;
     position:absolute;
     top:0;
@@ -91,23 +91,19 @@
     border-right-color:#46301a;
     transform:rotate(45deg);
     z-index:1;
-    /*animation:rotationforward 5s linear 0.8s infinite ;*/
 
     /*creates the timeline icons as a circle and rotates the icon clockwise*/
 }
  .main-timeline .cover{
     
-    width:210px;
-    height:118px;
-    position:absolute;
-    background-color:#bcd6a2;
-    border-radius: 150px 150px 0 0;
-    visibility: hidden;
+    width:212px;
+    height:212px;
+    border-radius:50%;
+    border:22px dashed  #bcd6a2;
     z-index:1;
-    top:50%;
-    left:45%;
-    transform:translate(-50%, -50%) rotate(-90deg);
-    
+    transform:rotate(45deg);
+    animation:rotationforward 5s linear 0.3s infinite ;
+
    
  }
 
@@ -176,7 +172,6 @@
 .main-timeline .timeline:nth-child(2n) .timeline-icon{
     transform:rotate(-135deg);
     
-    /*animation:rotationback 5s linear infinite;*/
     z-index:1;
 
     
@@ -197,9 +192,13 @@
     /*moves the connecting line to the right on every other data*/
 }
 .main-timeline .timeline:nth-child(2n) .cover {
-    transform-origin:center;
-    z-index:3;
-    transform:rotate(90deg) translate(-59px,-12px);
+    /*animation:rotationback 5s linear infinite;*/
+    transform:rotate(-135deg);
+
+
+    animation:rotationback 5s linear infinite 0.8s;
+    z-index:2;
+    
     
     
 }
