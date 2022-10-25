@@ -92,7 +92,7 @@
     transform:rotate(45deg);
     z-index:1;
 
-    /*creates the timeline icons as a circle and rotates the icon clockwise*/
+    /*creates the timeline icons as a bordered semicricle*/
 }
  .main-timeline .cover{
     
@@ -104,6 +104,7 @@
     z-index:1;
     transform:rotate(45deg);
     animation:rotationforward 5s linear 0.33s infinite ;
+    /*creates a rotating cover to make the line appear as if it was moving.*/
 
    
  }
