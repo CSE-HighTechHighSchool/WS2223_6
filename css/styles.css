@@ -99,10 +99,12 @@
     width:212px;
     height:212px;
     border-radius:50%;
+    border-width:thick;
     border:22px dashed  #bcd6a2;
     z-index:1;
     transform:rotate(45deg);
-    animation:rotationforward 5s linear 0.3s infinite ;
+    animation:rotationforward 5s linear 0.33s infinite ;
+    stroke-dasharray:50%25%2c 13%25;
 
    
  }
@@ -197,8 +199,7 @@
 
 
     animation:rotationback 5s linear infinite 0.8s;
-    z-index:2;
-    
+    z-index:1;
     
     
 }
