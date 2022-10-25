@@ -96,11 +96,11 @@
 }
  .main-timeline .cover{
     
-    width:214px;
-    height:214px;
+    width:212px;
+    height:212px;
     border-radius:50%;
     border-width:thick;
-    border:24px dashed  #bcd6a2;
+    border:22px dashed  #bcd6a2;
     z-index:1;
     transform:rotate(45deg);
     animation:rotationforward 5s linear 0.33s infinite ;
