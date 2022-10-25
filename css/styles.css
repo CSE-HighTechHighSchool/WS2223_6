@@ -26,14 +26,14 @@
 
 
 .nb-bg-color{
-    background-color: #4B8165;
+    background-color:#445038;
 }
 .footer {
-    background-color: #4B8165;
+    background-color: #445038;
 }
 /*----------------General Website Color------------------------------*/
 .timeline, .main-time .cover{
-    background-color:#E2F8E6;
+    background-color:#bcd6a2;
 }
 /* ----------------------------- Timeline CSS ----------------------------- */
 /*some timelinecode is adapted from https://bootsnipp.com/snippets/Q0ppE*/
@@ -86,7 +86,7 @@
     position:absolute;
     
     border-radius:50%;
-    border:20px dashed #f44556;
+    border:20px dashed #46301a;
     
     z-index:1;
     
@@ -99,7 +99,7 @@
     width:210px;
     height:118px;
     position:absolute;
-    background-color:#000;
+    background-color:#bcd6a2;
     border-radius: 150px 150px 0 0;
     
     z-index:1;
@@ -116,10 +116,10 @@
     height:110px;
     line-height:110px;
     border-radius:50%;
-    background:#fff;
+    background:rgb(255, 255, 255);
     font-size:35px;
     font-weight:700;
-    color:#f44556;
+    color:#110805;
     text-align:center;
     box-shadow: 0 0 20px rgba(0,0,0,.4);
     z-index:5;
@@ -129,11 +129,12 @@
     width:35%;
     
     float:right;
-    background:#f44556;
+    background:#46301a;
     padding:30px 20px;
     margin:50px 0;
     z-index:1;
-    position:relative
+    position:relative;
+    
     /*creates a box for information*/ 
 }
 .main-timeline .timeline-content:before{
@@ -142,8 +143,8 @@
     
     height:15px;
     border:5px dashed transparent;
-    color:#f44556;
-    background:#f44556;
+    color:#46301a;
+    background:#46301a;
     position:absolute;
     top:50%;
     left:-20%;
@@ -167,13 +168,13 @@
 }
 .main-timeline .timeline:nth-child(2n) .year{
     
-    color:#e97e2e;
+    color:#4a4646;
     /*rotates each year in the line and change its color*/
 
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon{
     transform:rotate(-135deg);
-    border-color:#e97e2e;
+    border-color:#4a4646;
     animation:rotationback 5s linear infinite;
     z-index:2;
 
@@ -183,7 +184,7 @@
 }
 .main-timeline .timeline:nth-child(2n) .timeline-content{
     float:left;
-    background:#e97e2e;
+    background:#4a4646;
     
     /*floats the information on every other event to the left*/
 }
@@ -191,7 +192,7 @@
 .main-timeline .timeline:nth-child(2n) .timeline-content:before{
     left:auto;
     right:-20%;
-    background:#e97e2e;
+    background:#4a4646;
     /*moves the connecting line to the right on every other data*/
 }
 .main-timeline .timeline:nth-child(2n) .cover {
