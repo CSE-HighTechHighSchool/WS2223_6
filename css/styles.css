@@ -86,10 +86,12 @@
     position:absolute;
     
     border-radius:50%;
-    border:20px dashed #46301a;
-    
+    border:20px solid transparent;
+    border-top-color:#46301a;
+    border-right-color:#46301a;
+    transform:rotate(45deg);
     z-index:1;
-    animation:rotationforward 5s linear 0.8s infinite ;
+    /*animation:rotationforward 5s linear 0.8s infinite ;*/
 
     /*creates the timeline icons as a circle and rotates the icon clockwise*/
 }
@@ -173,9 +175,9 @@
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon{
     transform:rotate(-135deg);
-    border-color:#4a4646;
-    animation:rotationback 5s linear infinite;
-    z-index:2;
+    
+    /*animation:rotationback 5s linear infinite;*/
+    z-index:1;
 
     
     /*rotates each part of the line and change its color*/
