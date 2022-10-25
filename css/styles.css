@@ -118,7 +118,7 @@
     background:rgb(255, 255, 255);
     font-size:35px;
     font-weight:700;
-    color:#110805;
+    color:#46301a;
     text-align:center;
     box-shadow: 0 0 20px rgba(0,0,0,.4);
     z-index:5;
@@ -173,7 +173,7 @@
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon{
     transform:rotate(-135deg);
-    
+    color:#4a4646;
     z-index:1;
 
     
@@ -196,7 +196,7 @@
 .main-timeline .timeline:nth-child(2n) .cover {
     /*animation:rotationback 5s linear infinite;*/
     transform:rotate(-135deg);
-
+    color:#4a4646;
 
     animation:rotationback 5s linear infinite 0.8s;
     z-index:1;
@@ -254,10 +254,10 @@
         margin-top: 30px;
         margin-bottom: 20px;
         position: relative;
+        
+        
     }
-    .main-timeline .cover{
-        visibility: hidden;
-    }
+    
     
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content{
