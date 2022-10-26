@@ -1,10 +1,13 @@
-let count = 0;
-document.querySelector('.card-button').addEventListener("click", () => {
-    if (count % 2 === 0) {
-        document.querySelector('.card-button').style.setProperty("--flip", "rotate(90deg)");
-    }
-    else {
-        document.querySelector('.card-button').style.setProperty("--flip", "");
-    }
-    count++;
-})
+document.querySelectorAll('.card-button').forEach((button) => {
+    let count = 0;
+    
+    button.addEventListener("click", () => {
+        if (count % 2 === 0) {
+            button.style.transform = "rotate(90deg)";
+        }
+        else {
+            button.style.transform = "rotate(0deg)";
+        }
+        count++;
+    })
+});
