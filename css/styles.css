@@ -280,6 +280,11 @@
     animation-delay: 2.25s;
     margin: 52px 0;
 }
+.main-timeline .timeline:nth-child(11) .timeline-content {
+    animation-delay: 2.5s;
+    margin: 47px 0;
+}
+
 
 /*edits the margin size on several content boxes to keep the timeline line together. Also delay the animation for each consecutive event so they appear one after another*/
 
