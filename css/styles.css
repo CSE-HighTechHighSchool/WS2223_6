@@ -101,10 +101,9 @@
     height:212px;
     border-radius:50%;
     border-width:thick;
-    border:22px dashed  #bcd6a2;
+    border:22px dashed #bcd6a2;
     z-index:1;
-    transform:rotate(45deg);
-    animation:rotationforward 5s linear 0.33s infinite ;
+    animation:rotationforward 5s linear infinite ;
     /*creates a rotating cover to make the line appear as if it was moving.*/
 
    
@@ -135,6 +134,8 @@
     z-index:1;
     position:relative;
     animation: fadeinzoom 1s;
+    opacity:0;
+    animation-fill-mode: forwards;
     
 
     
@@ -210,28 +211,58 @@
     transform:rotate(-135deg);
     color:#4a4646;
 
-    animation:rotationback 5s linear infinite 0.8s;
+    animation:rotationback 5s linear infinite ;
     z-index:1;
     
         /*rotates the cover and inverts it*/
 
 }
 
+.main-timeline .timeline:nth-child(2) .timeline-content {animation-delay:0.25s;
+}
+
+.main-timeline .timeline:nth-child(3) .timeline-content {
+    animation-delay:0.5s
+}
+.main-timeline .timeline:nth-child(4) .timeline-content {animation-delay:0.75s
+}
+ 
+.main-timeline .timeline:nth-child(5) .timeline-content {animation-delay:1s;
+}
+.main-timeline .timeline:nth-child(6) .timeline-content {animation-delay:1.25s;
+    
+}
+.main-timeline .timeline:nth-child(7) .timeline-content {animation-delay:1.5s;
+}
+
+.main-timeline .timeline:nth-child(8) .timeline-content {animation-delay:1.75s;
+    margin:-10px 0;
+}
+.main-timeline .timeline:nth-child(9) .timeline-content {animation-delay:2s;
+    margin:61px 0;
+}
+.main-timeline .timeline:nth-child(10) .timeline-content {animation-delay:2.25s;
+    margin:52px 0;
+}
+/*edits the margin size on several content boxes to keep the timeline line together. Also delay the animation for each consecutive event so they appear one after another*/
+
+
 @keyframes rotationforward {
     from {
-      transform: rotate(0deg);
+    
+      transform: rotate(9deg);
     }
     to {
-      transform: rotate(359deg);
+      transform: rotate(369deg);
     }
     /*creates the rotating forward animation*/
   }
   @keyframes rotationback {
     from {
-      transform: rotate(359deg);
+      transform: rotate(346deg);
     }
     to {
-      transform: rotate(0deg);
+      transform: rotate(-14deg);
     }
         /*creates the rotating backwards animation*/
 
@@ -291,7 +322,7 @@
         transform: translate(-50%,0);
     }
 }
-/*Controls the Famous People Cards*/
+/*------------------Controls the Famous People Cards------------*/
 .about-author,.about-procedure {
     color: rgb(82, 81, 81);
 }
@@ -302,11 +333,5 @@
     transition: transform 250ms linear;
 }
 /*Creates triangle animation*/
-.box{
-    height:100%;
-    z-index:4;
-    background-color:green;
-    overflow:cover;
 
-}
 
