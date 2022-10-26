@@ -293,22 +293,30 @@
          bottom:150px;
         }
 
+    .main-timeline .timeline:nth-child(8) .year{
+            bottom:250px;
+           }
+    .main-timeline .timeline:nth-child(9) .timeline-icon{
+            top:61px;
+           }
     .main-timeline .timeline-icon,
     .main-timeline .timeline:nth-child(2n) .timeline-icon{
         margin-top: 30px;
         margin-bottom: 20px;
         position: relative;
+        transform:rotate(135deg);
         
         
+    }
+    .main-timeline .cover{
+        visibility: hidden;
     }
     
     
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content{
         width: 100%;
-        border-radius: 0 0 20px 20px;
         text-align: center;
-        padding: 25px 20px;
         margin: 0 auto;
     }
     .main-timeline .timeline-content:before,
@@ -321,6 +329,9 @@
         z-index: -1;
         transform: translate(-50%,0);
     }
+    
+    
+    
 }
 /*------------------Controls the Famous People Cards------------*/
 .about-author,.about-procedure {
