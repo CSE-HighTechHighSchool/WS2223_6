@@ -1,14 +1,46 @@
+/* ----------------------------- Showcase CSS ------------------------------ */
+.showcase-img {
+    filter: brightness(70%);
+}
+
+.showcase-title {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 6rem;
+    width: 100%;
+    left: 0;
+}
+
+.buy-now {
+    background-color: rgba(200,200,200,60);
+}
+
+.buy-now h3 {
+    margin: 0 5rem;
+}
+
+.buy-now h2,
+.buy-now h3,
+.buy-now a {
+    padding: 1rem;
+}
+
+.buy-now a {
+    font-weight: bold;
+}
+
 /* ----------------------------- Navbar CSS -------------------------------- */
 .nb-bg-color {
     background-color: #2A6547;
 }
 
 .navbar-brand {
-    width: 150px;
+    width: 130px;
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 40px;
     padding: 0;
     animation: 3s cubic-bezier(.7,0,.39,1) 0s 1 slideInFromRight;
 }
