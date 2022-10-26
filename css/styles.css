@@ -32,24 +32,19 @@
 }
 /* ----------------------------- Map CSS ----------------------------- */
 
-#map {
-    height: 800px;
-    /* The height is 400 pixels */
-    /* The width is the width of the web page */
-  }
-.trail-item img {
+
+.carousel-inner {
     border-radius: 3%;
 }
 
 .trail-list {
     overflow-x:hidden;
     overflow-y:scroll;
-    height:800px;
+    height:700px;
+    background-color:#bcd6a2;
+    margin-bottom: 50px;
 }
-.showcase .container {
-    background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mg-4841-1597155372.jpg')
 
-}
 .footer a {
     color:#fff;
 }
@@ -58,4 +53,8 @@
     position:relative; 
     top:-50px; 
     border:none;
+}
+
+.mapcontainer {
+    margin-bottom: -50px;
 }
