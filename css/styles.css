@@ -32,7 +32,7 @@
     background-color: #445038;
 }
 /*----------------General Website Color------------------------------*/
-.timeline, .main-time .cover{
+.body{
     background-color:#bcd6a2;
 }
 /* ----------------------------- Timeline CSS ----------------------------- */
@@ -134,8 +134,19 @@
     margin:50px 0;
     z-index:1;
     position:relative;
+    animation: fadeinzoom 1s;
     
-    /*creates a box for information*/ 
+
+    
+    /*creates a box for information and make it fade in on page load*/ 
+}
+@keyframes fadeinzoom {
+    from { opacity: 0;
+        transform:scale(0.5);
+     }
+    to   { opacity: 1;
+        transform:scale(1);
+     }
 }
 .main-timeline .timeline-content:before{
     content:"";
@@ -185,6 +196,7 @@
     float:left;
     background:#4a4646;
     
+    
     /*floats the information on every other event to the left*/
 }
 
@@ -195,14 +207,14 @@
     /*moves the connecting line to the right on every other data*/
 }
 .main-timeline .timeline:nth-child(2n) .cover {
-    /*animation:rotationback 5s linear infinite;*/
     transform:rotate(-135deg);
     color:#4a4646;
 
     animation:rotationback 5s linear infinite 0.8s;
     z-index:1;
     
-    
+        /*rotates the cover and inverts it*/
+
 }
 
 @keyframes rotationforward {
@@ -290,5 +302,9 @@
     transition: transform 250ms linear;
 }
 /*Creates triangle animation*/
+.screencover{
+    
+    background-color:aliceblue;
 
+}
 
