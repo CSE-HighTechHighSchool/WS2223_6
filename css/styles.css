@@ -302,9 +302,11 @@
     transition: transform 250ms linear;
 }
 /*Creates triangle animation*/
-.screencover{
-    
-    background-color:aliceblue;
+.box{
+    height:100%;
+    z-index:4;
+    background-color:green;
+    overflow:cover;
 
 }
 
