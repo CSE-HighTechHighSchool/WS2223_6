@@ -3,7 +3,7 @@ document.querySelectorAll('.card-button').forEach((button) => {
     
     button.addEventListener("click", () => {
         if (count % 2 === 0) {
-            button.style.transform = "rotate(90deg)";
+            button.style.transform = "rotate(180deg)";
         }
         else {
             button.style.transform = "rotate(0deg)";

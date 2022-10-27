@@ -413,9 +413,14 @@
 }
 
 .card-button {
-    background: white;
+    background: #5e6b51;
     border: none;
     
     transition: transform 250ms linear;
+}
+.card{
+    background:#5e6b51;
+    border-radius:15px;
+    border: 5px solid #5e6b51;
 }
 /*Creates triangle animation*/

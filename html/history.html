@@ -14,40 +14,42 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color">
-        <div class="container">
-            <a href="#" class="navbar-brand">
-                <img src="/img/biking-logo.png" alt="bike" class="d-inline-block w-50">
-            </a>
 
-            <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-lg navbar-dark nb-bg-color">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="/img/biking-logo.png" alt="bike" class="d-inline-block w-50">
+        </a>
 
-            <!-- Collapsible navbar menu with custom hover underline CSS animation-->
-            <div class="collapse navbar-collapse" id="navmenu">
-                <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="html/diagram.html" class="nav-link hover-underline-animation menu1"
-                            id="nbMenuItem">Diagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="html/history.html" class="nav-link hover-underline-animation menu2"
-                            id="nbMenuItem">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="html/trails.html" class="nav-link hover-underline-animation menu3"
-                            id="nbMenuItem">Trails</a>
-                    </li>
-                </ul>
-            </div>
+        <!-- Hamburger Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+        <div class="collapse navbar-collapse" id="navmenu">
+            <!-- Links to hamburger menu button-->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/html/diagram.html" class="nav-link hover-underline-animation menu1"
+                        id="nbMenuItem">Diagram</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/history.html" class="nav-link hover-underline-animation menu2"
+                        id="nbMenuItem">History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/trails.html" class="nav-link hover-underline-animation menu3"
+                        id="nbMenuItem">Trails</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Responsive Timeline with alternating data (some code is adapted from https://bootsnipp.com/snippets/Q0ppE*/)-->
+<!-- Responsive Timeline with alternating data (some code is adapted from https://bootsnipp.com/snippets/Q0ppE*/)-->
+
+<body>
     <div class="body">
         <div class="container">
             <div class="box">
@@ -188,84 +190,77 @@
         <section class="author">
             <div class="container m-4">
                 <div class="d-flex justify-content-around">
-                   
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p>
-                                        <button class="card-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-triangle card-button" viewBox="0 0 16 16">
-                                            <path
-                                                d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 
-                                                1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 
-                                                13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
-                                        </svg>   
-                                          </button>
-                                    </a>
-                                    
-                                  </p>
-                                  <div class="collapse" id="collapseExample1">
-                                    <div class="card card-body">
-                                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                    </div>
-                                  </div>
+                    <div class="card rounded" style="width: 25rem;">
+                        <img src="/img//schurter-nino-lg.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-title text-light text-center mt-4">Card title</h5>
+
+                        <div class="card-body text-center">
+                            <p>
+                                <button class="card-button text-light" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <i class="bi bi-chevron-double-up"></i>
+
+                                </button>
+
+
+                            </p>
+                            <div class="collapse" id="collapse1">
+                                <div class="card card-body text-light">
+                                    Some placeholder content for the collapse component. This panel is hidden by default
+                                    but revealed when the user activates the relevant trigger.
+                                </div>
                             </div>
                         </div>
                     </div>
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p>
-                                        <button class="card-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-triangle card-button" viewBox="0 0 16 16">
-                                            <path
-                                                d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 
-                                                1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 
-                                                13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
-                                        </svg>   
-                                          </button>
-                                    </a>
-                                    
-                                  </p>
-                                  <div class="collapse" id="collapseExample">
-                                    <div class="card card-body">
-                                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                                    </div>
-                                  </div>
+
+                    <div class="card rounded" style="width: 25rem;">
+                        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <p>
+                                <button class="card-button justify-center " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <i class="bi bi-chevron-double-up"></i>
+                                </button>
+                                </a>
+
+                            </p>
+                            <div class="collapse" id="collapse2">
+                                <div class="card card-body text-light">
+                                    Some placeholder content for the collapse component. This panel is hidden by default
+                                    but
+                                    revealed when the user activates the relevant trigger.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
-        
 
-        
+
+
     </div>
 
 
 
-
-
-    <!-- Footer (Requiers BootStrap Icon CSS)-->
-    <footer class="p-5 footer text-light text-center position-relative">
-        <div class="container">
-            <p class="lead">
-                Copyright &copy; 2022 Biking
-            </p>
-            <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                <i class="bi bi-arrow-up-circle h2 icon-white"></i>
-            </a>
-        </div>
-
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script src="/js/scripts.js"></script>
 </body>
+
+<!-- Footer (Requiers BootStrap Icon CSS)-->
+<footer class="p-5 footer text-light text-center position-relative">
+    <div class="container">
+        <p class="lead">
+            Copyright &copy; 2022 Biking
+        </p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+            <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+        </a>
+    </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="/js/scripts.js"></script>
+
 
 </html>
