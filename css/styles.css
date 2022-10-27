@@ -31,8 +31,43 @@
     font-weight: bold;
 }
 
+.customer-rev {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    padding-bottom: 1.5rem;
+}
 
+.bi-person-circle {
+    font-size: 4rem;
+}
 
+.bi-star-fill {
+    font-size: 2rem;
+    color: rgb(231, 176, 39);
+}
+
+.reviews h1 {
+    font-size: 4rem;
+    padding-top: 1.5rem;
+}
+
+.customer-rev p{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.customer-rev h3 {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.rev-left {
+    margin-right: 0px;
+}
+
+.rev-right {
+    margin-left: 0px;
+}
 /* ----------------------------- Navbar CSS -------------------------------- */
 .nb-bg-color {
     background-color: #2A6547;
@@ -45,7 +80,7 @@
 .navbar-brand img {
     height: 40px;
     padding: 0;
-    animation: 3s cubic-bezier(.7,0,.39,1) 0s 1 slideInFromRight;
+    animation: 3s cubic-bezier(.5,0,.39,1) 0s 1 slideInFromRight;
 }
 
 @keyframes slideInFromRight {
