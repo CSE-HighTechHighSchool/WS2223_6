@@ -87,15 +87,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2
+    z-index: 2;
         /*configures size and position of timeline elements*/
 }
 
 .main-timeline .timeline-icon {
     width: 210px;
     height: 210px;
-    position: absolute;
-
     border-radius: 50%;
     border: 20px solid transparent;
     border-top-color: #46301a;
@@ -109,11 +107,11 @@
 
 .main-timeline .cover {
 
-    width: 212px;
-    height: 212px;
+    width: 213px;
+    height: 213px;
     border-radius: 50%;
     border-width: thick;
-    border: 22px dashed #bcd6a2;
+    border: 23px dashed #bcd6a2;
     z-index: 1;
     animation: rotationforward 5s linear infinite;
     /*creates a rotating cover to make the line appear as if it was moving.*/
@@ -123,33 +121,30 @@
 
 .main-timeline .year {
 
-    width: 105px;
-    height: 105px;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
+    width: 110px;
+    height: 110px;
+    background: #bcd6a2;
     color:#46301a;
-    
-    display:flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     z-index: 5;
-    border: 5px dashed black;
+    border: 10px solid rgb(41, 40, 40);
 
     /*creates a circle inside the icon for the year. The circle is white and can be seen by its black shadow around it*/
 }
 .main-timeline .text{
-    line-height: 110px;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 1000;
     color: #46301a;
     z-index:4;
+    background-color:#bcd6a2;
+    border-radius:30%;
+    
     /*year of the event*/
 }
 .main-timeline .center {
-    background:#828382;
-    width: 16px;
-    height: 16px;
+    background:#848282;
+    width: 2px;
+    height: 2px;
     border-radius: 20px;
     position:absolute;
     z-index: 1;
@@ -157,7 +152,21 @@
     
     
 }
-
+[class*='timelineWheelLine']{
+    background-color:#848282;
+    width:100%;
+    height:5px;
+}
+.timelineWheelLine1{
+    transform:rotate(45deg);
+}
+.timelineWheelLine2{
+    transform:rotate(-45deg);
+}
+.timelineWheelLine3{
+    transform:rotate(-90deg);
+}
+/*creates the lines inside the tire*/
 .main-timeline .timeline-content {
     width: 35%;
 
