@@ -455,16 +455,21 @@
     border: 5px solid #5e6b51;
 }
 /*Creates triangle animation*/
+/*------------------Controls the Showcase------------*/
 
-
-
-
-
-@keyframes tyreSpin {
-    0% {
-        transform: rotate(0deg);
-   }
-    100% {
-        transform: rotate(360deg);
-   }
+.showcase-img {
+    filter: brightness(70%);
+    width:100%;
 }
+
+.showcase-title {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 6rem;
+    width: 100%;
+    left: 0;
+}
+
+
+
