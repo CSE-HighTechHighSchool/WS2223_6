@@ -39,7 +39,7 @@
 }
 
 /* ----------------------------- Timeline CSS ----------------------------- */
-/*some timelinecode is adapted from https://bootsnipp.com/snippets/Q0ppE*/
+/*Some timeline code is adapted from https://bootsnipp.com/snippets/Q0ppE*/
 .main-timeline {
     position: relative
         /*sets timeline to relative positioning*/
@@ -113,7 +113,7 @@
     border-width: thick;
     border: 23px dashed #bcd6a2;
     z-index: 1;
-    animation: rotationforward 5s linear infinite;
+    animation: rotationforward 6s linear infinite;
     /*creates a rotating cover to make the line appear as if it was moving.*/
 
 
@@ -202,7 +202,6 @@
     width: 20%;
 
     height: 15px;
-    border: 5px dashed transparent;
     color: #46301a;
     background: #46301a;
     position: absolute;
@@ -212,6 +211,29 @@
 
     /*creates the line connecting the box to the timeline and sets it behind the box*/
 }
+.main-timeline .timeline-connector{
+    content: "";
+    width: 15px;
+    float:right;
+    height: 20%;
+    color: #46301a;
+    background: #46301a;
+    bottom: -20%;
+    right: 50%;
+    z-index: -1;
+    
+    
+}
+.main-timeline .timeline-image{
+    position:absolute;
+   
+    max-height:150px;
+    max-width: 150px;
+    top: 85%;
+    left: 76%;
+    z-index:10;
+}
+
 
 .main-timeline .title {
     font-size: 20px;
@@ -246,6 +268,22 @@
 
 }
 
+.main-timeline .timeline:nth-child(2n) .timeline-connector{
+    color: #4a4646;
+    background:#4a4646;
+}
+.main-timeline .timeline:nth-child(2n) .timeline-image{
+    left:11%;
+}
+.main-timeline .timeline:nth-child(6) .timeline-image{
+    top:83%;
+}
+.main-timeline .timeline:nth-child(8) .timeline-image{
+    top:105%;
+}
+/*moves images for each event*/
+
+
 .main-timeline .timeline:nth-child(2n) .timeline-content {
     float: left;
     background: #4a4646;
@@ -265,7 +303,7 @@
     transform: rotate(-135deg);
     color: #4a4646;
 
-    animation: rotationback 5s linear infinite;
+    animation: rotationback 6s linear infinite;
     z-index: 1;
 
     /*rotates the cover and inverts it*/
