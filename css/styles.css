@@ -506,7 +506,6 @@
 
 .card-button {
     background: #5e6b51;
-
     transition: transform 250ms linear;
 }
 
@@ -514,12 +513,12 @@
     background: #5e6b51;
     border-radius: 15px;
     border: 5px solid #5e6b51;
+    transition:0.1s ease-in;
+    
 }
 .card:hover{
-    
-    transition: .4s ease-in;
-
-
+    transform:scale(1.05,1.05);
+    transition:0.1s ease-in;
 }
 
 
@@ -531,7 +530,7 @@
     width: 100%;
 }
 
-.showcase-title {
+ .showcase-title.title1 {
     position: absolute;
     top: 50%;
     right: 50%;
@@ -542,6 +541,19 @@
     opacity: 0;
     animation-fill-mode: forwards;
 }
+.showcase-title.title2 {
+    position: relative;
+    bottom:25%;
+    right: 50%;
+    font-size: 6rem;
+    width: 100%;
+    left: 0;
+    animation: fadeinzoom 1s;
+    opacity: 0;
+    z-index:5;
+    animation-fill-mode: forwards;
+}
+
 
 /*---Controls the Animations--*/
 @keyframes cardSizeIncrease{
