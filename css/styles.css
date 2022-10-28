@@ -516,18 +516,12 @@
     border: 5px solid #5e6b51;
 }
 .card:hover{
-    animation: cardSizeIncrease 250ms linear;
-    animation-fill-mode: forwards;
+    
+    transition: .4s ease-in;
 
 
 }
-.card:hover:after{
-    animation: cardSizeIncrease 500ms linear;
-    animation-direction:reverse;
 
- 
-
-}
 
 /*Creates triangle animation*/
 /*------------------Controls the Showcase------------*/
