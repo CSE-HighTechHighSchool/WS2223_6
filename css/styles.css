@@ -235,6 +235,7 @@
     z-index: 10;
     animation: fadeinzoom 1s forwards;
     opacity: 0;
+    transition:0.1s ease-in;
 }
 
 
@@ -524,11 +525,10 @@
     transition:0.1s ease-in;
     
 }
-.card:hover{
+.card:hover,.timeline-image{
     transform:scale(1.05,1.05);
     transition:0.1s ease-in;
 }
-
 
 /*Creates triangle animation*/
 /*------------------Controls the Showcase------------*/
