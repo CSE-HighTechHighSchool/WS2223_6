@@ -6,7 +6,6 @@
 .showcase-title {
     position: absolute;
     top: 50%;
-    right: 50%;
     font-size: 6rem;
     width: 100%;
     left: 0;
@@ -68,6 +67,51 @@
 .rev-right {
     margin-left: 0px;
 }
+
+.trails-desc {
+    margin-top: 5%;
+    padding-top: 40px;
+    background-color: #4B8165;
+}
+
+.trails-desc-header {
+    width:100%;
+}
+
+.trails-desc-header img {
+    min-width: 0;
+}
+
+.trails-desc-header h1{
+    color: white;
+    font-size: 5rem;
+    padding: 0 1rem;
+}
+
+.trails-desc-main {
+    position: relative;
+}
+
+.trails-desc-text {
+    position: absolute;
+    top: 34%;
+    width: 100%;
+    z-index: 50;
+}
+
+.trails-desc-text p {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: white;
+}
+
+.trails-desc-text a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: .6rem;
+    padding: 1rem;
+}
+
 /* ----------------------------- Navbar CSS -------------------------------- */
 .nb-bg-color {
     background-color: #2A6547;
