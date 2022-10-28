@@ -2,7 +2,6 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    /*color: #0087ca;*/
 }
 
 .hover-underline-animation:after {
@@ -14,13 +13,11 @@
     bottom: 0;
     left: 0;
     background-color: #eae6e6;
-    /*transform-origin: bottom right;*/
     transition: transform 0.35s ease-out;
 }
 
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
-    /*transform-origin: bottom left;*/
 }
 
 
@@ -88,7 +85,7 @@
     top: 0;
     right: 0;
     z-index: 2;
-        /*configures size and position of timeline elements*/
+    /*configures size and position of timeline elements*/
 }
 
 .main-timeline .timeline-icon {
@@ -124,48 +121,65 @@
     width: 110px;
     height: 110px;
     background: #bcd6a2;
-    color:#46301a;
+    color: #46301a;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     z-index: 5;
     border: 10px solid rgb(41, 40, 40);
 
     /*creates a circle inside the icon for the year. The circle is white and can be seen by its black shadow around it*/
 }
-.main-timeline .text{
+
+.main-timeline .text {
     font-size: 30px;
     font-weight: 1000;
     color: #46301a;
-    z-index:4;
-    background-color:#bcd6a2;
-    border-radius:30%;
-    
+    z-index: 4;
+    background-color: #bcd6a2;
+    border-radius: 30%;
+
     /*year of the event*/
 }
+
 .main-timeline .center {
-    background:#848282;
+    background: #848282;
     width: 2px;
     height: 2px;
     border-radius: 20px;
-    position:absolute;
+    position: absolute;
     z-index: 1;
     /*creates the center dot of the tire*/
-    
-    
+
+
 }
-[class*='timelineWheelLine']{
-    background-color:#848282;
-    width:100%;
-    height:5px;
+
+[class*='timelineWheelLine'] {
+    background-color: #848282;
+    width: 100%;
+    height: 5px;
+    animation: rotationforward1 6s linear infinite;
+
 }
-.timelineWheelLine1{
-    transform:rotate(45deg);
+
+
+
+.timelineWheelLine1 {
+    animation: rotationforward2 6s linear infinite;
+
 }
-.timelineWheelLine2{
-    transform:rotate(-45deg);
+
+.timelineWheelLine2 {
+    animation: rotationforward3 6s linear infinite;
 }
-.timelineWheelLine3{
-    transform:rotate(-90deg);
+
+.timelineWheelLine3 {
+    animation: rotationforward4 6s linear infinite;
 }
+.main-timeline .timeline:nth-child(2n) .timelineWheelLine1, .main-timeline .timeline:nth-child(2n) .timelineWheelLine4,.main-timeline .timeline:nth-child(2n) .timelineWheelLine2,.main-timeline .timeline:nth-child(2n) .timelineWheelLine3{
+    animation-direction:reverse;
+}
+
+
+
 /*creates the lines inside the tire*/
 .main-timeline .timeline-content {
     width: 35%;
@@ -179,22 +193,7 @@
     animation: fadeinzoom 1s;
     opacity: 0;
     animation-fill-mode: forwards;
-
-
-
     /*creates a box for information and make it fade in on page load*/
-}
-
-@keyframes fadeinzoom {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .main-timeline .timeline-content:before {
@@ -211,27 +210,35 @@
 
     /*creates the line connecting the box to the timeline and sets it behind the box*/
 }
-.main-timeline .timeline-connector{
+
+.main-timeline .timeline-connector {
     content: "";
     width: 15px;
-    float:right;
+    float: right;
     height: 20%;
     color: #46301a;
     background: #46301a;
     bottom: -20%;
     right: 50%;
     z-index: -1;
-    
-    
+    animation: fadeinzoom 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+
 }
-.main-timeline .timeline-image{
-    position:absolute;
-   
-    max-height:150px;
+
+.main-timeline .timeline-image {
+    position: absolute;
+
+    max-height: 150px;
     max-width: 150px;
     top: 85%;
     left: 76%;
-    z-index:10;
+    z-index: 10;
+    animation: fadeinzoom 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 
@@ -268,20 +275,24 @@
 
 }
 
-.main-timeline .timeline:nth-child(2n) .timeline-connector{
+.main-timeline .timeline:nth-child(2n) .timeline-connector {
     color: #4a4646;
-    background:#4a4646;
+    background: #4a4646;
 }
-.main-timeline .timeline:nth-child(2n) .timeline-image{
-    left:11%;
+
+.main-timeline .timeline:nth-child(2n) .timeline-image {
+    left: 11%;
 }
-.main-timeline .timeline:nth-child(6) .timeline-image{
-    top:83%;
+
+.main-timeline .timeline:nth-child(6) .timeline-image {
+    top: 83%;
 }
-.main-timeline .timeline:nth-child(8) .timeline-image{
-    top:105%;
+
+.main-timeline .timeline:nth-child(8) .timeline-image {
+    top: 105%;
 }
-/*moves images for each event*/
+
+/*moves images for each to be in the center of the event div*/
 
 
 .main-timeline .timeline:nth-child(2n) .timeline-content {
@@ -310,28 +321,40 @@
 
 }
 
-.main-timeline .timeline:nth-child(2) .timeline-content {
+.main-timeline .timeline:nth-child(2) .timeline-content,
+.main-timeline .timeline:nth-child(2) .timeline-connector,
+.main-timeline .timeline:nth-child(2) .timeline-image {
     animation-delay: 0.25s;
 }
 
-.main-timeline .timeline:nth-child(3) .timeline-content {
+.main-timeline .timeline:nth-child(3) .timeline-content,
+.main-timeline .timeline:nth-child(3) .timeline-connector,
+.main-timeline .timeline:nth-child(3) .timeline-image {
     animation-delay: 0.5s
 }
 
-.main-timeline .timeline:nth-child(4) .timeline-content {
+.main-timeline .timeline:nth-child(4) .timeline-content,
+.main-timeline .timeline:nth-child(4) .timeline-connector,
+.main-timeline .timeline:nth-child(4) .timeline-image {
     animation-delay: 0.75s
 }
 
-.main-timeline .timeline:nth-child(5) .timeline-content {
+.main-timeline .timeline:nth-child(5) .timeline-content,
+.main-timeline .timeline:nth-child(5) .timeline-connector,
+.main-timeline .timeline:nth-child(5) .timeline-image {
     animation-delay: 1s;
 }
 
-.main-timeline .timeline:nth-child(6) .timeline-content {
+.main-timeline .timeline:nth-child(6) .timeline-content,
+.main-timeline .timeline:nth-child(6) .timeline-connector,
+.main-timeline .timeline:nth-child(6) .timeline-image {
     animation-delay: 1.25s;
 
 }
 
-.main-timeline .timeline:nth-child(7) .timeline-content {
+.main-timeline .timeline:nth-child(7) .timeline-content,
+.main-timeline .timeline:nth-child(7) .timeline-connector,
+.main-timeline .timeline:nth-child(7) .timeline-image {
     animation-delay: 1.5s;
 }
 
@@ -340,49 +363,49 @@
     margin: -10px 0;
 }
 
+.main-timeline .timeline:nth-child(8) .timeline-connector,
+.main-timeline .timeline:nth-child(8) .timeline-image {
+    animation-delay: 1.75s;
+}
+
 .main-timeline .timeline:nth-child(9) .timeline-content {
     animation-delay: 2s;
     margin: 61px 0;
+}
+
+.main-timeline .timeline:nth-child(9) .timeline-connector,
+.main-timeline .timeline:nth-child(9) .timeline-image {
+    animation-delay: 2s;
 }
 
 .main-timeline .timeline:nth-child(10) .timeline-content {
     animation-delay: 2.25s;
     margin: 52px 0;
 }
+
+.main-timeline .timeline:nth-child(10) .timeline-connector,
+.main-timeline .timeline:nth-child(10) .timeline-image {
+    animation-delay: 2.25s
+}
+
+
 .main-timeline .timeline:nth-child(11) .timeline-content {
     animation-delay: 2.5s;
     margin: 47px 0;
 }
 
+.main-timeline .timeline:nth-child(11) .timeline-connector,
+.main-timeline .timeline:nth-child(11) .timeline-image {
+    animation-delay: 2.5s;
+}
+
+
+
 
 /*edits the margin size on several content boxes to keep the timeline line together. Also delay the animation for each consecutive event so they appear one after another*/
 
 
-@keyframes rotationforward {
-    from {
 
-        transform: rotate(9deg);
-    }
-
-    to {
-        transform: rotate(369deg);
-    }
-
-    /*creates the rotating forward animation*/
-}
-
-@keyframes rotationback {
-    from {
-        transform: rotate(346deg);
-    }
-
-    to {
-        transform: rotate(-14deg);
-    }
-
-    /*creates the rotating backwards animation*/
-
-}
 
 /*Makes the website responsive to any size screen*/
 @media only screen and (max-width: 1199px) {
@@ -483,21 +506,35 @@
 
 .card-button {
     background: #5e6b51;
-    border: none;
-    
+
     transition: transform 250ms linear;
 }
-.card{
-    background:#5e6b51;
-    border-radius:15px;
+
+.card {
+    background: #5e6b51;
+    border-radius: 15px;
     border: 5px solid #5e6b51;
 }
+.card:hover{
+    animation: cardSizeIncrease 250ms linear;
+    animation-fill-mode: forwards;
+
+
+}
+.card:hover:after{
+    animation: cardSizeIncrease 500ms linear;
+    animation-direction:reverse;
+
+ 
+
+}
+
 /*Creates triangle animation*/
 /*------------------Controls the Showcase------------*/
 
 .showcase-img {
     filter: brightness(70%);
-    width:100%;
+    width: 100%;
 }
 
 .showcase-title {
@@ -507,7 +544,101 @@
     font-size: 6rem;
     width: 100%;
     left: 0;
+    animation: fadeinzoom 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
+/*---Controls the Animations--*/
+@keyframes cardSizeIncrease{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
+@keyframes rotationforward {
+    from {
+
+        transform: rotate(9deg);
+    }
+
+    to {
+        transform: rotate(369deg);
+    }
+
+    /*creates the rotating forward animation*/
+}
+
+@keyframes rotationback {
+    from {
+        transform: rotate(346deg);
+    }
+
+    to {
+        transform: rotate(-14deg);
+    }
+
+    /*creates the rotating backwards animation*/
+
+}
+
+@keyframes rotationforward1 {
+    from {
+
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotationforward2 {
+    from {
+
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(225deg);
+    }
+
+}
+
+@keyframes rotationforward3 {
+    from {
+
+        transform: rotate(-45deg);
+    }
+
+    to {
+        transform: rotate(135deg);
+    }
 
 
+}
+
+@keyframes rotationforward4 {
+    from {
+
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+
+}
+@keyframes fadeinzoom {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
