@@ -221,19 +221,22 @@
     bottom: -20%;
     right: 50%;
     z-index: -1;
-    animation: fadeinzoom 1s forwards;
+    animation: fadeinzoom 1s;
     opacity: 0;
+    animation-fill-mode: forwards;
 
 
 }
 
 .main-timeline .timeline-image {
+    position: absolute;
+
     max-height: 200px;
     max-width: 200px;
     top: 85%;
     left: 74%;
     z-index: 10;
-    animation: fadeinzoom 1s forwards;
+    animation: fadeinzoom 1s;
     opacity: 0;
     transition:0.1s ease-in;
 }
@@ -264,7 +267,7 @@
 
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
     transform: rotate(-135deg);
-   
+    color: #4a4646;
     z-index: 1;
 
 
@@ -535,6 +538,7 @@
 
 .showcase-img {
     filter: brightness(70%);
+    width: 100%;
 }
 
  .showcase-title.title1 {
@@ -544,8 +548,9 @@
     font-size: 6rem;
     width: 100%;
     left: 0;
-    animation: fadeinzoom 1s forwards;
+    animation: fadeinzoom 1s;
     opacity: 0;
+    animation-fill-mode: forwards;
 }
 .showcase-title.title2 {
     position: relative;
@@ -554,9 +559,10 @@
     font-size: 6rem;
     width: 100%;
     left: 0;
-    animation: fadeinzoom 1s forwards;
+    animation: fadeinzoom 1s;
     opacity: 0;
     z-index:5;
+    animation-fill-mode: forwards;
 }
 
 
