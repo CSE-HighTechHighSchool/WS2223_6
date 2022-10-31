@@ -198,7 +198,6 @@
 .main-timeline .timeline-content:before {
     content: "";
     width: 20%;
-
     height: 15px;
     color: #46301a;
     background: #46301a;
@@ -408,42 +407,12 @@ Also delay the animation for each consecutive event so they appear one after ano
 
 
 /*Makes the website responsive to any size screen*/
-@media only screen and (max-width: 1199px) {
-    .main-timeline .timeline {
-        margin-top: -103px;
-    }
-
-    .main-timeline .timeline-content:before {
-        left: -18%;
-    }
-
-    .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-        right: -18%;
-    }
+@media only screen and (max-width: 1400px) {
+    .main-timeline .timeline-content:before 
+        {visibility:hidden;}
 }
 
-@media only screen and (max-width: 990px) {
-    .main-timeline .timeline {
-        margin-top: -127px;
-    }
-
-    .main-timeline .timeline-content:before {
-        left: -2%;
-    }
-
-    .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-        right: -2%;
-    }
-    .main-timeline .timeline-connector,.main-timeline .timeline-content:before{
-        visibility:hidden;
-    }
-    .main-timeline .timeline-image{
-        max-height:150px;
-        max-width:150px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1000px) {
     .main-timeline .timeline {
         margin-top: 0;
         overflow: hidden;
@@ -505,6 +474,13 @@ Also delay the animation for each consecutive event so they appear one after ano
         z-index: -1;
         transform: translate(-50%, 0);
     }
+    .main-timeline .timeline-image{
+        
+        visibility: hidden;
+    }
+    .main-timeline .timeline-image, .main-timeline .timeline-connector{
+        visibility:hidden;
+    }
 
 
 
@@ -554,7 +530,7 @@ Also delay the animation for each consecutive event so they appear one after ano
     animation-fill-mode: forwards;
 }
 .showcase-title.title2 {
-    position: relative;
+    position: absolute;
     bottom:25%;
     right: 50%;
     font-size: 6rem;
