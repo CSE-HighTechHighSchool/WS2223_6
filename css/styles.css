@@ -71,7 +71,6 @@
     width: 100%;
     clear: both;
 
-
     /*positions the parts of timeline together and changes the timeline size*/
 }
 
@@ -221,9 +220,8 @@
     bottom: -20%;
     right: 50%;
     z-index: -1;
-    animation: fadeinzoom 1s;
+    animation: fadeinzoom 1s forwards;
     opacity: 0;
-    animation-fill-mode: forwards;
 
 
 }
@@ -236,7 +234,7 @@
     top: 85%;
     left: 74%;
     z-index: 10;
-    animation: fadeinzoom 1s;
+    animation: fadeinzoom 1s forwards;
     opacity: 0;
     transition:0.1s ease-in;
 }
@@ -298,6 +296,7 @@
 .main-timeline .timeline:nth-child(2n) .timeline-content {
     float: left;
     background: #4a4646;
+
 
 
     /*floats the information on every other event to the left*/
@@ -402,7 +401,8 @@
 
 
 
-/*edits the margin size on several content boxes to keep the timeline line together. Also delay the animation for each consecutive event so they appear one after another*/
+/*edits the margin size on several content boxes to keep the timeline line together. 
+Also delay the animation for each consecutive event so they appear one after another*/
 
 
 
@@ -531,6 +531,7 @@
 .card:hover,.timeline-image{
     transform:scale(1.05,1.05);
     transition:0.1s ease-in;
+    
 }
 
 /*Creates triangle animation*/
@@ -659,3 +660,7 @@
         transform: scale(1);
     }
 }
+
+
+
+  
