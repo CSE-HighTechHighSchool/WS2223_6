@@ -491,11 +491,18 @@ Also delay the animation for each consecutive event so they appear one after ano
 /*------------------Controls the Showcase------------*/
 
 
-.container-fluid {
+.container-fluid1 {
     position: relative;
     text-align: center;
-    color: white;
-  }
+    width:100%;
+    min-height:853px;
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/historyofbikes.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color:#090909;
+
+
+}
   .centered {
     position: absolute;
     top: 50%;
@@ -504,14 +511,19 @@ Also delay the animation for each consecutive event so they appear one after ano
     font-size:100px;
   }
 
-  .centered1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size:100px;
-  }
+  .container-fluid2 {
+    position: relative;
+    text-align: center;
+    width:100%;
+    top:80px;
+    min-height:853px;
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/Biking\ Famous\ People.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color:#090909;
 
+
+}
 
 
 
