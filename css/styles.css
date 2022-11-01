@@ -1,3 +1,11 @@
+/*--------------------------Colors------------------------------------------*/
+:root{
+    --navfoot:#445038;
+    --websitecolor:#bcd6a2;
+    --timelinepath:#46301a;
+    --timelineopposinggreypath:#4a4646;
+    --famouspeoplecard:#5e6b51;
+}
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
@@ -23,16 +31,16 @@
 
 
 .nb-bg-color {
-    background-color: #445038;
+    background-color: var(--navfoot);
 }
 
 .footer {
-    background-color: #445038;
+    background-color: var(--navfoot);
 }
 
 /*----------------General Website Color------------------------------*/
 .body {
-    background-color: #bcd6a2;
+    background-color: var(--websitecolor);
 }
 
 /* ----------------------------- Timeline CSS ----------------------------- */
@@ -92,8 +100,8 @@
     height: 210px;
     border-radius: 50%;
     border: 20px solid transparent;
-    border-top-color: #46301a;
-    border-right-color: #46301a;
+    border-top-color: var(--timelinepath);
+    border-right-color: var(--timelinepath);
     transform: rotate(45deg);
     z-index: 1;
 
@@ -107,7 +115,7 @@
     height: 213px;
     border-radius: 50%;
     border-width: thick;
-    border: 23px dashed #bcd6a2;
+    border: 23px dashed var(--websitecolor);
     z-index: 1;
     animation: rotationforward 6s linear infinite;
     /*creates a rotating cover to make the line appear as if it was moving.*/
@@ -120,7 +128,7 @@
     width: 110px;
     height: 110px;
     background: #bcd6a2;
-    color: #46301a;
+    color: var(--timelinepath);
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     z-index: 5;
     border: 10px solid rgb(41, 40, 40);
@@ -131,25 +139,14 @@
 .main-timeline .text {
     font-size: 30px;
     font-weight: 1000;
-    color: #46301a;
+    color: var(--timelinepath);
     z-index: 4;
-    background-color: #bcd6a2;
+    background-color: var(--websitecolor);
     border-radius: 30%;
 
     /*year of the event*/
 }
 
-.main-timeline .center {
-    background: #848282;
-    width: 2px;
-    height: 2px;
-    border-radius: 20px;
-    position: absolute;
-    z-index: 1;
-    /*creates the center dot of the tire*/
-
-
-}
 
 [class*='timelineWheelLine'] {
     background-color: #848282;
@@ -184,14 +181,13 @@
     width: 35%;
 
     float: right;
-    background: #46301a;
+    background: var(--timelinepath);
     padding: 30px 20px;
     margin: 50px 0;
     z-index: 1;
     position: relative;
-    animation: fadeinzoom 1s;
+    animation: fadeinzoom 1s forwards;
     opacity: 0;
-    animation-fill-mode: forwards;
     /*creates a box for information and make it fade in on page load*/
 }
 
@@ -199,8 +195,7 @@
     content: "";
     width: 20%;
     height: 15px;
-    color: #46301a;
-    background: #46301a;
+    background: var(--timelinepath);
     position: absolute;
     top: 50%;
     left: -20%;
@@ -214,8 +209,7 @@
     width: 15px;
     float: right;
     height: 20%;
-    color: #46301a;
-    background: #46301a;
+    background: var(--timelinepath);
     bottom: -20%;
     right: 50%;
     z-index: -1;
@@ -255,25 +249,14 @@
         /*timeline info text adjustment*/
 }
 
-.main-timeline .timeline:nth-child(2n) .year {
-
-    color: #4a4646;
-    /*rotates each year in the line and change its color*/
-
-}
-
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
     transform: rotate(-135deg);
-    color: #4a4646;
     z-index: 1;
-
-
-    /*rotates each part of the line and change its color*/
+    /*rotates each part of the line*/
 
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-connector {
-    color: #4a4646;
     background: #4a4646;
 }
 
@@ -294,7 +277,7 @@
 
 .main-timeline .timeline:nth-child(2n) .timeline-content {
     float: left;
-    background: #4a4646;
+    background:var(--timelineopposinggreypath);
 
 
 
@@ -304,19 +287,16 @@
 .main-timeline .timeline:nth-child(2n) .timeline-content:before {
     left: auto;
     right: -20%;
-    background: #4a4646;
+    background: var(--timelineopposinggreypath);
     /*moves the connecting line to the right on every other data*/
 }
 
 .main-timeline .timeline:nth-child(2n) .cover {
     transform: rotate(-135deg);
-    color: #4a4646;
-
     animation: rotationback 6s linear infinite;
     z-index: 1;
 
     /*rotates the cover and inverts it*/
-
 }
 
 .main-timeline .timeline:nth-child(2) .timeline-content,
@@ -487,20 +467,17 @@ Also delay the animation for each consecutive event so they appear one after ano
 }
 
 /*------------------Controls the Famous People Cards------------*/
-.about-author,
-.about-procedure {
-    color: rgb(82, 81, 81);
-}
+
 
 .card-button {
-    background: #5e6b51;
+    background: var(--famouspeoplecard);
     transition: transform 250ms linear;
 }
 
 .card {
-    background: #5e6b51;
+    background: var(--famouspeoplecard);
     border-radius: 15px;
-    border: 5px solid #5e6b51;
+    border: 5px solid var(--famouspeoplecard);
     transition:0.1s ease-in;
     
 }
@@ -513,34 +490,31 @@ Also delay the animation for each consecutive event so they appear one after ano
 /*Creates triangle animation*/
 /*------------------Controls the Showcase------------*/
 
-.showcase-img {
-    filter: brightness(70%);
-    width: 100%;
-}
 
- .showcase-title.title1 {
+.container-fluid {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .centered {
     position: absolute;
     top: 50%;
-    right: 50%;
-    font-size: 6rem;
-    width: 100%;
-    left: 0;
-    animation: fadeinzoom 1s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-}
-.showcase-title.title2 {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:100px;
+  }
+
+  .centered1 {
     position: absolute;
-    bottom:25%;
-    right: 50%;
-    font-size: 6rem;
-    width: 100%;
-    left: 0;
-    animation: fadeinzoom 1s;
-    opacity: 0;
-    z-index:5;
-    animation-fill-mode: forwards;
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:100px;
+  }
+
+
+
+
 
 
 /*---Controls the Animations--*/
