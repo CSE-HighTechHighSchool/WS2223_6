@@ -482,7 +482,7 @@ Also delay the animation for each consecutive event so they appear one after ano
     
 }
 .card:hover,.timeline-image{
-    transform:scale(1.05,1.05);
+    transform:scale(1.03,1.03);
     transition:0.1s ease-in;
     
 }
