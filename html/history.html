@@ -10,103 +10,484 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>history.scrollRestoration="manual"</script>
+
 
 </head>
 
+<div class="container-fluid1">
+
+<nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100;">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="/img/biking-logo.png" alt="bike" class="d-inline-block w-50">
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+        <div class="collapse navbar-collapse " id="navmenu">
+            <!-- Links to hamburger menu button-->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ">
+                    <a href="/html/diagram.html" class="nav-link hover-underline-animation menu1 "
+                        id="nbMenuItem">Diagram</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/history.html" class="nav-link hover-underline-animation menu2"
+                        id="nbMenuItem">History</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/trails.html" class="nav-link hover-underline-animation menu3"
+                        id="nbMenuItem">Trails</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Main Showcase -->
+    <h1 class="centered text-light">Biking History</h1>
+</div>
+<!-- Text -->
+
+
+<!-- Responsive Timeline with alternating data (some code is adapted from https://bootsnipp.com/snippets/Q0ppE*/)-->
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color">
+
+    <div class="body">
         <div class="container">
-            <a href="#" class="navbar-brand">
-                <img src="" alt="" class="d-inline-block align-text-top w-50">
-            </a>
+            <div class="box ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-timeline mb-5">
 
-            <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                            <div class="timeline">
 
-            <!-- Collapsible navbar menu with custom hover underline CSS animation-->
-            <div class="collapse navbar-collapse" id="navmenu">
-                <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="diagram.html" class="nav-link hover-underline-animation" id="nbMenuItem">Diagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="history.html" class="nav-link hover-underline-animation"
-                            id="nbMenuItem">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="trails.html" class="nav-link hover-underline-animation" id="nbMenuItem">Trails</a>
-                    </li>
-                </ul>
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1817</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Swiftwalker</h3>
+                                        <p class="description">
+                                            German inventor Karl von Drais developed the first bicycle, named the
+                                            "swiftwalker". The machine had no pedals, a wooden frame, and iron rims.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+
+
+                                    <img src="/img/Swiftwalker.png"
+                                        class="img-fluid w-50 timeline-image rounded d-flex "
+                                        alt="A diagram of a swiftwalker">
+                                </div>
+
+                            </div>
+
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1818</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Velocipedes</h3>
+                                        <p class="description">
+                                            Denis Johnson created a improved model of the swiftwalker with a serpantine
+                                            wooden frame and larger wheels.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Velocipede.png" class="img-fluid w-50 timeline-image rounded d-flex"
+                                        alt="image of a velocipede">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1839</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">The First Modern Bicycle</h3>
+                                        <p class="description">
+                                            Kirkpatrick MacMillan, a blacksmith from Scotland, developed the first
+                                            bicycle
+                                            that could power without having to touch the ground.</p>
+
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Kirkpatrick MacMillan.jpg"
+                                        class="img-fluid w-75 timeline-image rounded d-flex" alt="the first modern bicycle">
+
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1864</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Pedal Bicycle</h3>
+                                        <p class="description">
+                                            Pierre Michaux and Pierre Lallemen attached pedals installed a driving seat.
+                                            The
+                                            bicycle was named the "boneshaker" because was very uncomfortable to ride.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Pedal Bicycle.webp"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="boneshaker">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1868</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Penny Farthing</h3>
+                                        <p class="description">
+                                            Eugène Meyer created a bicycle with a large front wheel and recieved a
+                                            French
+                                            patent for wire wheels. The bicycle was named the "Penny-farthing".
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Penny Farthing.jpg"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="penny-farthing">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1872</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Chain Bicycle</h3>
+                                        <p class="description">
+                                            James Starley invented the tangentially spoked wheel. The spokes were
+                                            connected
+                                            to a hub at a tangent. He also created a chain drive with a differential
+                                            gear.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/James Starley.jpg"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="chain bicycle">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1885</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Safety Bicycle</h3>
+                                        <p class="description">John Kemp Starley perfected the bicycle design with two
+                                            equal
+                                            wheels and a chain drive. Advancements in brakes and tire followed shortly.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Safety Bicycle.jpg"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="safety bicycle">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1890s</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Bicycle Boom</h3>
+                                        <p class="description">With the invention of the safety bike, bicycle popularity
+                                            boomed. When economic depression hit in 1896, people bought bikes instead of
+                                            other vehicles, attracting hundreds of manufacturers into the bicycle
+                                            business.
+                                            The application of the internal combustion engine resulted in the invention
+                                            of
+                                            the motorcycle. In 1896, a volunteer biker corp called the Iron riders rode
+                                            from
+                                            Montana to Yellowstone using bikes modified for off-road use.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Iron Riders.webp"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="Iron Riders">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1966</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Mountain Bikes</h3>
+                                        <p class="description">Cycling enthusiast D. Gwynn built the first rough-terrain
+                                            bicycle and called it a mountain bike.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Mountain Bikes.jpg"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="Mountain Bicycle">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">1970s</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Mountain Bike Manufacturing</h3>
+                                        <p class="description">In 1978, Joe Breeze invented and manufactured the first
+                                            purpose-built mountain bike. This bike had larger wheels and a wider frame.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Joe Breeze.jpg" class="img-fluid w-50 timeline-image rounded d-flex"
+                                        alt="Purpose-built mountain bike">
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-icon d-flex justify-content-center align-items-center"></div><span
+                                    class="year d-flex justify-content-center align-items-center rounded-circle">
+                                    <div class="text">2000s</div>
+                                    <div class="timelineWheelLine1 position-absolute"></div>
+                                    <div class="timelineWheelLine2 position-absolute"></div>
+                                    <div class="timelineWheelLine3 position-absolute "></div>
+                                    <div class="timelineWheelLine4 position-absolute "></div>
+                                </span>
+                                <div class="cover d-flex justify-content-center align-items-center"></div>
+                                <div data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out-sine">
+                                    <div class="timeline-content rounded">
+                                        <h3 class="title">Mountain Bike Popularity</h3>
+                                        <p class="description">Mountain biking moved from a little-known sport to a
+                                            mainstream activity. Mountain bikes and gear became availabile at standard
+                                            bicycle stores.
+                                        </p>
+                                        <div class="timeline-connector position-absolute"> </div>
+                                    </div>
+                                    <img src="/img/Popularity in 2000s.jpg"
+                                        class="img-fluid w-50 timeline-image rounded d-flex" alt="Most recent bicycle">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </nav>
-    <!-- Responsive Timeline -->
-    <section class="block-content t-block-teal l-block-spacing">
-        <div class="l-contained">
-          <header class="heading-group">
-            <h2>Timeline</h2>
-            <p class="subtitle">
-                a brief history
-            </p>
-          </header>
-          <ul class="timeline-list">
-            <li>
-              <div class="content">
-                <h3>part a</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam felis, rutrum nec enim non, sodales facilisis purus. Vestibulum viverra egestas ipsum eget commodo. Nullam aliquet lorem vitae nulla dictum vestibulum sed quis tellus. Sed diam diam, facilisis tincidunt volutpat nec, auctor quis magna. Proin sed nunc iaculis ipsum scelerisque tincidunt. Cras eleifend leo tellus, fermentum finibus tortor fringilla eu.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="content">
-                <h3>part b</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam felis, rutrum nec enim non, sodales facilisis purus. Vestibulum viverra egestas ipsum eget commodo. Nullam aliquet lorem vitae nulla dictum vestibulum sed quis tellus. Sed diam diam, facilisis tincidunt volutpat nec, auctor quis magna. Proin sed nunc iaculis ipsum scelerisque tincidunt. Cras eleifend leo tellus, fermentum finibus tortor fringilla eu.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="content">
-                <h3>part c</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam felis, rutrum nec enim non, sodales facilisis purus. Vestibulum viverra egestas ipsum eget commodo. Nullam aliquet lorem vitae nulla dictum vestibulum sed quis tellus. Sed diam diam, facilisis tincidunt volutpat nec, auctor quis magna. Proin sed nunc iaculis ipsum scelerisque tincidunt. Cras eleifend leo tellus, fermentum finibus tortor fringilla eu.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="content">
-                <h3>part d</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quam felis, rutrum nec enim non, sodales facilisis purus. Vestibulum viverra egestas ipsum eget commodo. Nullam aliquet lorem vitae nulla dictum vestibulum sed quis tellus. Sed diam diam, facilisis tincidunt volutpat nec, auctor quis magna. Proin sed nunc iaculis ipsum scelerisque tincidunt. Cras eleifend leo tellus, fermentum finibus tortor fringilla eu.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    
 
-
-  
-    <!-- Footer (Requiers BootStrap Icon CSS)-->
-    <footer class="p-5 footer text-light text-center position-relative">
-        <div class="container">
-            <p class="lead">
-                Copyright &copy; 2022 Biking
-            </p>
-            <a href="#" class="position-absolute bottom-0 end-0 p-5">
-                <i class="bi bi-arrow-up-circle h2 icon-white"></i>
-            </a>
+        </section>
+        <!-- Secondary Showcase -->
+        <div class="container-fluid2">
+            <h1 class="centered text-light">Famous Bikers</h1>
         </div>
 
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+
+
+
+        <!-- Famous People Cards-->
+
+        <section class="author">
+            <div class="container m-5 pt-5">
+                <div class="d-flex justify-content-around">
+                    
+                    <div class="card rounded" style="width: 25rem; height:75%;">
+                        <img src="/img//schurter-nino-lg.jpg" class="card-img-top"style="height:390px; width:390px;"
+                            alt="image of Nino Schurter with a bicycle helmet on">
+                        <h5 class="card-title text-light text-center mt-4">Nino Schurter</h5>
+
+                        <div class="card-body text-center">
+                            <p>
+                                <button class="card-button text-light border-0" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <i class="bi bi-chevron-double-up"></i>
+
+                                </button>
+
+
+                            </p>
+                            <div class="collapse" id="collapse1">
+                                <div class="card card-body text-light">
+                                    Nino Schurter is a Swiss cross-country mountain cyclist who races for the the
+                                    SCOTT-SRAM MTB Racing Team. He won the world championship in men's cross-country
+                                    biking in 2009, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2021 and 2022. He also won
+                                    the gold medal in mountain biking at the 2016 Olympics, the silver medal 2012
+                                    Olympics and the bronze medal at the 2008 Olympics.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card rounded" style="width: 25rem;  height:75%;">
+                        <img src="/img/Emily Batty.jpg" class="card-img-top" style="height:390px; width:390px;"
+                            alt="image of Emily Batty with a bicycle">
+                        <h5 class="card-title text-light text-center mt-4">Emily Batty</h5>
+
+                        <div class="card-body text-light text-center">
+                            <p>
+                                <button class="card-button text-light border-0 " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <i class="bi bi-chevron-double-up"></i>
+                                </button>
+
+
+                            </p>
+                            <div class="collapse" id="collapse2">
+                                <div class="card card-body text-light">
+                                    Emily Batty is a Canadian cross-country mountain biker. She won a bronze medal at
+                                    the 2016 World Championships. She is a 2 time Olympian and 2 time World Champ Pan-Am
+                                    National Champion.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around mt-5">
+
+                    <div class="card rounded" style="width: 25rem;  height:75%;">
+                        <img src="/img/Catharine Pendrel.jpg" class="card-img-top" style="height:400px; width:390px;"
+                            alt="image of Catharine Pendrel with a baby ">
+                        <h5 class="card-title text-light text-center mt-4">Catharine Pendrel</h5>
+
+                        <div class="card-body text-center">
+                            <p>
+                                <button class="card-button text-light border-0" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <i class="bi bi-chevron-double-up"></i>
+
+                                </button>
+
+
+                            </p>
+                            <div class="collapse" id="collapse3">
+                                <div class="card card-body text-light">
+                                    Catharine Pendrel is a Canadian cross-country mountain-biker. Pendrel was the world
+                                    champion in cross-country mountain biking in 2011 and 2014 and the 2007 Pan American
+                                    Games champion. She is also a bronze medalist in cross country Mountain biking.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card rounded" style="width: 25rem;  height:75%;">
+                        <img src="/img/Julien Absalon.jpg" class="card-img-top" style="height:400px; width:390px;"
+                            alt="image of Julien Absalon">
+                        <h5 class="card-title text-light text-center mt-4">Julien Absalon</h5>
+
+                        <div class="card-body text-light text-center">
+                            <p>
+                                <button class="card-button text-light border-0 " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    <i class="bi bi-chevron-double-up"></i>
+                                </button>
+
+
+                            </p>
+                            <div class="collapse" id="collapse4">
+                                <div class="card card-body text-light">
+                                    Julien Arnaud Absalon is a French cross-country mountain biker. He is a 2 time
+                                    Olympic Champion and 5 time world champion in mountain biking.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
 </body>
+
+
+
+
+
+<!-- Footer (Requiers BootStrap Icon CSS)-->
+<footer class="p-5 footer text-light text-center position-relative">
+    <div class="container">
+        <p class="lead">
+            Copyright &copy; 2022 Biking
+        </p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+            <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+        </a>
+    </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="/js/scripts.js" type="module" defer></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 </html>
