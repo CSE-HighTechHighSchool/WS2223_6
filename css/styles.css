@@ -43,7 +43,7 @@
 }
 
 /* ----------------------------- Timeline CSS ----------------------------- */
-/*Some timeline code is adapted from https://bootsnipp.com/snippets/Q0ppE*/
+/*Some timeline code is adapted from https://bootsnipp.com/snippets/Q0ppE    */
 .main-timeline {
     position: relative
         /*sets timeline to relative positioning*/
@@ -104,7 +104,7 @@
     transform: rotate(45deg);
     z-index: 1;
 
-    /*creates the timeline icons as a bordered semicricle*/
+    /*creates the timeline icons as a bordered semicricle and rotates them to the correct orientation*/
 }
 
 
@@ -132,7 +132,7 @@
     z-index: 5;
     border: 10px solid rgb(41, 40, 40);
 
-    /*creates a circle inside the icon for the year. The circle is white and can be seen by its black shadow around it*/
+    /*creates a circle inside the icon for the year. The circle will become a bicycle wheel and can be seen by its black shadow around it*/
 }
 
 .main-timeline .text {
@@ -184,7 +184,7 @@
     margin: 50px 0;
     z-index: 1;
     position: relative;
-    /*creates a box for information and make it fade in on page load*/
+    /*creates a box for event information */
 }
 .main-timeline .timeline-content:before {
     content: "";
@@ -208,8 +208,9 @@
     bottom: -20%;
     right: 50%;
     z-index: -1;
+    /*creates the line connecting the box to the image*/
 
-
+    
 }
 
 .main-timeline .timeline-image {
@@ -219,6 +220,8 @@
     top:225px;
     left:74%;
     z-index: 10;
+        /*creates the timeline event image*/
+
 }
 
 
@@ -235,7 +238,7 @@
     color: #fff;
     line-height: 24px;
     margin: 0
-        /*timeline info text adjustment*/
+    /*timeline info text adjustment*/
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
@@ -257,7 +260,7 @@
     top:285px;;
 }
 
-/*moves images for each to be in the center of the event div*/
+/*moves images to be in the center of the event div*/
 
 
 .main-timeline .timeline:nth-child(2n) .timeline-content {
@@ -284,90 +287,37 @@
     /*rotates the cover and inverts it*/
 }
 
-.main-timeline .timeline:nth-child(2) .timeline-content,
-.main-timeline .timeline:nth-child(2) .timeline-connector,
-.main-timeline .timeline:nth-child(2) .timeline-image {
-    animation-delay: 0.25s;
-}
 
-.main-timeline .timeline:nth-child(3) .timeline-content,
-.main-timeline .timeline:nth-child(3) .timeline-connector,
-.main-timeline .timeline:nth-child(3) .timeline-image {
-    animation-delay: 0.5s
-}
-
-.main-timeline .timeline:nth-child(4) .timeline-content,
-.main-timeline .timeline:nth-child(4) .timeline-connector,
-.main-timeline .timeline:nth-child(4) .timeline-image {
-    animation-delay: 0.75s
-}
-
-.main-timeline .timeline:nth-child(5) .timeline-content,
-.main-timeline .timeline:nth-child(5) .timeline-connector,
-.main-timeline .timeline:nth-child(5) .timeline-image {
-    animation-delay: 1s;
-}
-
-.main-timeline .timeline:nth-child(6) .timeline-content,
-.main-timeline .timeline:nth-child(6) .timeline-connector,
-.main-timeline .timeline:nth-child(6) .timeline-image {
-    animation-delay: 1.25s;
-
-}
-
-.main-timeline .timeline:nth-child(7) .timeline-content,
-.main-timeline .timeline:nth-child(7) .timeline-connector,
-.main-timeline .timeline:nth-child(7) .timeline-image {
-    animation-delay: 1.5s;
-}
 
 .main-timeline .timeline:nth-child(8) .timeline-content {
-    animation-delay: 1.75s;
     margin: -10px 0;
 }
 
-.main-timeline .timeline:nth-child(8) .timeline-connector,
-.main-timeline .timeline:nth-child(8) .timeline-image {
-    animation-delay: 1.75s;
-}
+
 
 .main-timeline .timeline:nth-child(9) .timeline-content {
-    animation-delay: 2s;
     margin: 61px 0;
 }
 
-.main-timeline .timeline:nth-child(9) .timeline-connector,
-.main-timeline .timeline:nth-child(9) .timeline-image {
-    animation-delay: 2s;
-}
+
 
 .main-timeline .timeline:nth-child(10) .timeline-content {
-    animation-delay: 2.25s;
     margin: 52px 0;
 }
 
-.main-timeline .timeline:nth-child(10) .timeline-connector,
-.main-timeline .timeline:nth-child(10) .timeline-image {
-    animation-delay: 2.25s
-}
+
 
 
 .main-timeline .timeline:nth-child(11) .timeline-content {
-    animation-delay: 2.5s;
     margin: 47px 0;
 }
 
-.main-timeline .timeline:nth-child(11) .timeline-connector,
-.main-timeline .timeline:nth-child(11) .timeline-image {
-    animation-delay: 2.5s;
-}
 
 
 
 
-/*edits the margin size on several content boxes to keep the timeline line together. 
-Also delay the animation for each consecutive event so they appear one after another*/
 
+/*edits the margin size on several content boxes to keep the timeline line together. */
 
 
 
@@ -473,7 +423,7 @@ Also delay the animation for each consecutive event so they appear one after ano
 }
 
 /*Creates triangle animation*/
-/*------------------Controls the Showcase------------*/
+/*------------------Controls the Showcases------------------*/
 
 
 .container-fluid1 {
@@ -484,9 +434,6 @@ Also delay the animation for each consecutive event so they appear one after ano
     background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/historyofbikes.jpg);
     background-size: cover;
     background-position: center;
-    background-color:#090909;
-
-
 }
   .centered {
     position: absolute;
@@ -494,7 +441,7 @@ Also delay the animation for each consecutive event so they appear one after ano
     left: 50%;
     transform: translate(-50%, -50%);
     font-size:100px;
-    animation: fadeinzoom 0.5s linear forwards;
+    animation: fadein 0.5s linear forwards;
   }
 
   .container-fluid2 {
@@ -506,9 +453,6 @@ Also delay the animation for each consecutive event so they appear one after ano
     background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/Biking\ Famous\ People.jpg);
     background-size: cover;
     background-position: center;
-    background-color:#090909;
-
-
 }
 
 
@@ -597,7 +541,7 @@ Also delay the animation for each consecutive event so they appear one after ano
     }
 
 }
-@keyframes fadeinzoom {
+@keyframes fadein {
     from {
         opacity: 0;
     }
