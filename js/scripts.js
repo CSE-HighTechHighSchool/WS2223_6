@@ -11,12 +11,13 @@ document.querySelectorAll('.card-button').forEach((button) => {
         }
         count++;
     })
-});
+});//Rotates the card buttons on click
+
 AOS.init({
   offset: 400, 
   delay: 0, 
   duration: 1000 
-});
+});//Initializes the onScroll timeline animations
 
   
 

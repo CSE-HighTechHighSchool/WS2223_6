@@ -1,5 +1,11 @@
 
-
+/*--------------------------Colors------------------------------------------*/
+:root{
+    
+    --websitecolor:#b8b5ab;
+    --timelinepath:#515151;
+    --greypath:#515151;
+}
 /* ----------------------------- Buy Now Section CSS ----------------------------- */
 .buy-now {
     background-color: rgba(200,200,200,60);
@@ -101,7 +107,7 @@
     padding: 1rem;
 }
 
-/* ----------------------------- History Description CSS ----------------------------- */
+/* ----------------------------- Bike Home Page History Description CSS ----------------------------- */
 .history-desc {
     background-color: #EBD5B3;
 }
@@ -142,7 +148,7 @@
     padding: 1rem;
 }
 
-/* ----------------------------- Diagram Description CSS ----------------------------- */
+/* ----------------------------- Bike Diagram Description CSS ----------------------------- */
 .diagram-desc {
     background-color:rgb(24, 24, 23);
 }
@@ -176,7 +182,7 @@
     margin-bottom: 3%;
 }
 
-/* ----------------------------- Navbar CSS -------------------------------- */
+/* ----------------------------- Navbar Animation CSS -------------------------------- */
 
 
 .navbar-brand {
@@ -186,7 +192,7 @@
 .navbar-brand img {
     height: 40px;
     padding: 0;
-    animation: 3s cubic-bezier(.5,0,.39,1) 0s 1 slideInFromRight;
+    animation: 3s cubic-bezier(.5,0,.39,1) 0s 1 slideInFromRight forwards;
 }
 
 @keyframes slideInFromRight {
@@ -194,16 +200,10 @@
         transform: translateX(100vw);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-100px);
     }
 }
 
-#nbMenuItem {
-    font-size: 20px;
-    margin: 0px 20px;
-    opacity: 0;
-    animation-fill-mode: forwards;
-}
 
 
 @keyframes fadeIn {
@@ -216,13 +216,13 @@
 }
 
 .menu1 {
-    animation: 0.6s ease-out 1.25s 1 fadeIn;
+    animation: 0.6s ease-out 1.25s 1 fadeIn forwards;
 }
 .menu2 {
-    animation: 0.6s ease-out 1.15s 1 fadeIn;
+    animation: 0.6s ease-out 1.15s 1 fadeIn forwards;
 }
 .menu3 {
-    animation: 0.6s ease-out 1.05s 1 fadeIn;
+    animation: 0.6s ease-out 1.05s 1 fadeIn forwards;
 }
 
 /* ----------------------------- Bike Diagram CSS ------------------------------------ */
@@ -315,13 +315,7 @@
 }
 
 
-/*--------------------------Colors------------------------------------------*/
-:root{
-    
-    --websitecolor:#b8b5ab;
-    --timelinepath:#515151;
-    --greypath:#515151;
-}
+
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
@@ -354,7 +348,7 @@
 #nbMenuItem{
     font-weight:bold;
     color:white;
-    opacity:1;
+    opacity:0;
 }
 
 /*----------------General Website Color------------------------------*/
@@ -637,11 +631,10 @@
 
 
 
-/*edits the margin size on several content boxes to keep the timeline line together. */
 
 
 
-/*Makes the website responsive to any size screen*/
+/*Makes the history page responsive to any size screen*/
 @media only screen and (max-width: 1400px) {
     .main-timeline .timeline-content:before 
         {visibility:hidden;}
