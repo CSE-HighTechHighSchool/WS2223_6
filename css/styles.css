@@ -3,8 +3,8 @@
 :root{
     
     --websitecolor:#b8b5ab;
-    --timelinepath:#515151;
-    --greypath:#515151;
+    --timelinepath:#604848;
+    --greypath:#604848;
 }
 /* ----------------------------- Buy Now Section CSS ----------------------------- */
 .buy-now {
@@ -188,6 +188,7 @@
 .navbar-brand {
     width: 130px;
 }
+
 
 .navbar-brand img {
     height: 40px;
