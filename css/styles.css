@@ -120,15 +120,39 @@
 }
 
 .history-desc-header {
+    position: relative;
+}
+
+.history-desc-title {
+    position: relative;
+    z-index: 10;
+    width: 100%;
     padding: 3%;
+    text-align: center;
 }
 
 .history-desc-header h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
+    display: inline-block;
+    background-color: #EBD5B3;
 }
 
 .history-desc-header img {
-    width: 100%;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+
+.history-desc-main p {
+    font-size: 1.8rem;
+}
+
+.history-desc-main a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: .3rem 0 2% 0;
+    padding: 1rem;
 }
 
 /* ----------------------------- Navbar CSS -------------------------------- */
