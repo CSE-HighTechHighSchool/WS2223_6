@@ -179,7 +179,6 @@
 /*creates the lines inside the tire*/
 .main-timeline .timeline-content {
     width: 35%;
-
     float: right;
     background: var(--timelinepath);
     padding: 30px 20px;
@@ -190,7 +189,6 @@
     opacity: 0;
     /*creates a box for information and make it fade in on page load*/
 }
-
 .main-timeline .timeline-content:before {
     content: "";
     width: 20%;
@@ -213,23 +211,17 @@
     bottom: -20%;
     right: 50%;
     z-index: -1;
-    animation: fadeinzoom 1s forwards;
-    opacity: 0;
 
 
 }
 
 .main-timeline .timeline-image {
     position: absolute;
-
     max-height: 200px;
     max-width: 200px;
-    top: 85%;
-    left: 74%;
+    top:225px;
+    left:74%;
     z-index: 10;
-    animation: fadeinzoom 1s forwards;
-    opacity: 0;
-    transition:0.1s ease-in;
 }
 
 
@@ -264,12 +256,8 @@
     left: 9%;
 }
 
-.main-timeline .timeline:nth-child(6) .timeline-image {
-    top: 83%;
-}
-
 .main-timeline .timeline:nth-child(8) .timeline-image {
-    top: 105%;
+    top:285px;;
 }
 
 /*moves images for each to be in the center of the event div*/
@@ -622,7 +610,6 @@ Also delay the animation for each consecutive event so they appear one after ano
         transform: scale(1);
     }
 }
-
 
 
   
