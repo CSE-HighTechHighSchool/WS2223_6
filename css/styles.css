@@ -112,10 +112,8 @@
     padding: 1rem;
 }
 
-
 /* ----------------------------- History Description CSS ----------------------------- */
 .history-desc {
-    margin: 3%;
     background-color: #EBD5B3;
 }
 
@@ -153,6 +151,40 @@
     font-weight: bold;
     margin: .3rem 0 2% 0;
     padding: 1rem;
+}
+
+/* ----------------------------- Diagram Description CSS ----------------------------- */
+.diagram-desc {
+    background-color:rgb(24, 24, 23);
+}
+
+.diagram-desc-header {
+    padding: 3%;
+}
+
+.diagram-desc-header h1 {
+    color: white;
+    font-size: 5rem;
+    padding: 2% 6% 0 6%;
+}
+
+.diagram-desc-header img {
+    filter: invert(100%);
+    width: 10%;
+}
+
+.diagram-desc-main p {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: white;
+}
+
+.diagram-desc-main a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: .6rem;
+    padding: .8rem;
+    margin-bottom: 3%;
 }
 
 /* ----------------------------- Navbar CSS -------------------------------- */
