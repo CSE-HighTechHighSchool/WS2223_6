@@ -782,7 +782,7 @@ body {
     text-align: center;
     width:100%;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/showcase-img.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/biking-parts.png);
     background-size: cover;
     background-position: center;
 }
