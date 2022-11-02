@@ -1,15 +1,4 @@
-/* ----------------------------- Showcase CSS ------------------------------ */
-.showcase-img {
-    filter: brightness(70%);
-}
 
-.showcase-title {
-    position: absolute;
-    top: 50%;
-    font-size: 6rem;
-    width: 100%;
-    left: 0;
-}
 
 /* ----------------------------- Buy Now Section CSS ----------------------------- */
 .buy-now {
@@ -789,7 +778,6 @@
     position: relative;
     text-align: center;
     width:100%;
-    top:80px;
     min-height:853px;
     background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/showcase-img.jpg);
     background-size: cover;
