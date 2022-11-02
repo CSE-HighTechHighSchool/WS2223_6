@@ -1,9 +1,9 @@
 /*--------------------------Colors------------------------------------------*/
 :root{
-    --navfoot:#445038;
-    --websitecolor:#a3c581;
-    --timelinepath:#46301a;
-    --greypath:#4a4646;
+    
+    --websitecolor:#b8b5ab;
+    --timelinepath:#515151;
+    --greypath:#515151;
 }
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
@@ -29,12 +29,15 @@
 
 
 
-.nb-bg-color {
-    background-color: var(--navfoot);
-}
+
 
 .footer {
-    background-color: var(--navfoot);
+    background-color: var(--timelinepath);
+}
+#nbMenuItem{
+    font-weight:bold;
+    color:white;
+    opacity:1;
 }
 
 /*----------------General Website Color------------------------------*/
