@@ -785,6 +785,16 @@
     background-size: cover;
     background-position: center;
 }
+.container-fluid3 {
+    position: relative;
+    text-align: center;
+    width:100%;
+    top:80px;
+    min-height:853px;
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/showcase-img.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
 
 
