@@ -353,7 +353,7 @@
 }
 
 /*----------------General Website Color------------------------------*/
-.body {
+body {
     background-color: var(--websitecolor);
 }
 
