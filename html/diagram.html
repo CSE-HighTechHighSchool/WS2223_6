@@ -14,43 +14,48 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100; height:100px">
-        <div class="container">
-            <a href="/index.html" class="navbar-brand">
-                <img src="/img/biking-logo.png" alt="bike" class="d-inline-block w-75 h-75">
-            </a>
-    
-            <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <!-- Collapsible navbar menu with custom hover underline CSS animation-->
-            <div class="collapse navbar-collapse " id="navmenu">
-                <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ">
-                        <a href="/html/diagram.html" class="nav-link hover-underline-animation menu1 "
-                            id="nbMenuItem">Diagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/html/history.html" class="nav-link hover-underline-animation menu2"
-                            id="nbMenuItem">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/html/trails.html" class="nav-link hover-underline-animation menu3"
-                            id="nbMenuItem">Trails</a>
-                    </li>
-                </ul>
+    <div class="container-fluid5">
+        <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100; height:100px">
+            <div class="container">
+                <a href="/index.html" class="navbar-brand">
+                    <img src="/img/biking-logo.png" alt="bike" class="d-inline-block w-75 h-75">
+                </a>
+        
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+                <div class="collapse navbar-collapse " id="navmenu">
+                    <!-- Links to hamburger menu button-->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ">
+                            <a href="/html/diagram.html" class="nav-link hover-underline-animation menu1 "
+                                id="nbMenuItem">Diagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/html/history.html" class="nav-link hover-underline-animation menu2"
+                                id="nbMenuItem">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/html/trails.html" class="nav-link hover-underline-animation menu3"
+                                id="nbMenuItem">Trails</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+        <!-- Main Showcase -->
+        <h1 class="centered text-light">Anatomy of a Mountain Bike</h1>
+    </div>
 
-    <section class="diagram-and-title">
-        <!-- Title and line break -->
-        <br>
-        <h1 class="text-center diagram-title">Anatomy of a Mountain Bike</h1>
-        <hr><br>
+    <section class="diagram">
+        <div class="diagram-help d-flex justify-content-center">
+            <i class="bi bi-chevron-double-down"></i>
+            <p>Try hovering over the circles below</p>
+            <i class="bi bi-chevron-double-down"></i>
+        </div>
         <div class="p-5 d-flex align-items-center diagram">
             <!-- Bicycle image -->
             <img src="/img/bike-diagram.png" class="img-fluid diagram-image">
@@ -85,7 +90,57 @@
                 <p>Pedals are the mitochondria of the bike. Pedaling spins the back wheel. Make sure you are using gears properly to get the most out of your power.</p>
             </div>
         </div>
-        
+    </section>
+
+    <section class="diagram-types">
+        <div class="container-fluid6">
+            <h1 class="centered text-light">Types of Mountain Bikes</h1>
+        </div>
+        <div class="bike-type row">
+            <div class="col-md-4">
+                <img src="/img/cross-country-bike.jpg" alt="Cross country bike" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3>Cross country bike</h3>
+                <p>The cross country bike is made for flat paths, such as through forests or feilds. It is a hardtail bike, meaning the only the front wheel has suspension.</p>
+            </div>
+        </div>
+        <div class="bike-type row">
+            <div class="col-md-4">
+                <img src="/img/enduro-bike.jpg" alt="Enduro bike" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3>All Mountain Bike / Enduro Bike</h3>
+                <p>All mountain bikes are made for a wide variety of trails, making it very versatile. The Enduro bike is similar, but is also better at jumps and descents.</p>
+            </div>
+        </div>
+        <div class="bike-type row">
+            <div class="col-md-4">
+                <img src="/img/downhill-bike.jpg" alt="Downhill bike" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3>Downhill</h3>
+                <p>Downhill bikes are made for going down steep descents as fast as possible. It has a low seat, wide handlebars, and thick tires that get a good grip on the mountain.</p>
+            </div>
+        </div>
+        <div class="bike-type row">
+            <div class="col-md-4">
+                <img src="/img/freeride-bike.jpg" alt="Freeride bike" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3>Freeride</h3>
+                <p>Freeride bikes are built for steep terrain and difficult obstacles. They can handle big drops and large jumps due to their robust components.</p>
+            </div>
+        </div>
+        <div class="bike-type bike-type-bottom row">
+            <div class="col-md-4">
+                <img src="/img/fat-bike.jpg" alt="Fat bike" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3>Fat bikes</h3>
+                <p>Fat bikes' main characteristic are their extremely thick wheels, which can be about 4-5 inches thick. They are built for riding on surfaces such and snow and sand, which require a lot of traction.</p>
+            </div>
+        </div>
     </section>
   
     <!-- Footer (Requiers BootStrap Icon CSS)-->
