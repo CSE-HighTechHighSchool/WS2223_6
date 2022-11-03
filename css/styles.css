@@ -1,3 +1,11 @@
+:root{
+    --websitecolor:#b8b5ab;
+    --timelinepath:#6f5351;
+    --greypath:#6f5351;
+}
+
+
+
 /* ----------------------------- Underline Animation CSS ----------------------------- */
 .hover-underline-animation {
     display: inline-block;
@@ -24,11 +32,15 @@
 }
 
 
-.nb-bg-color{
-    background-color: rgb(93, 142, 157);
-}
 .footer {
     background-color: black;
+}
+
+#nbMenuItem{
+    font-weight:bold;
+    color:white;
+    opacity:0;
+    font-size:x-large;
 }
 /* ----------------------------- Map CSS ----------------------------- */
 
@@ -41,7 +53,7 @@
     overflow-x:hidden;
     overflow-y:scroll;
     height:700px;
-    background-color:#bcd6a2;
+    background-color:#6f5351;
     margin-bottom: 50px;
 }
 
@@ -52,9 +64,141 @@
 .custom-map {
     position:relative; 
     top:-50px; 
-    border:none;
+
+
 }
 
 .mapcontainer {
-    margin-bottom: -50px;
+   margin-bottom: -50px;
+}
+
+.map-contain {
+    border:5px solid #b8b5ab;
+    border-bottom: 0;
+}
+
+
+.card-button {
+    background: var(--greypath);
+    transition: transform 250ms linear;
+}
+
+.card {
+    background: var(--greypath);
+    border-radius: 15px;
+    border: 5px solid var(--greypath);
+    transition:0.1s ease-in;
+    
+}
+.card:hover,.timeline-image{
+    transform:scale(1.03,1.03);
+    transition:0.1s ease-in;
+    
+}
+
+
+.container-fluid4 {
+    position: relative;
+    text-align: center;
+    width:100%;
+    min-height:853px; 
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/trailshowcase.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:100px;
+    animation: fadein 0.5s linear forwards;
+  }
+
+.trail-details {
+    background-color:#b8b5ab;
+}
+
+.map {
+    background-color:#b8b5ab;
+}
+
+
+.bike-type {
+    background-color: #414141;
+    margin: 4% 5% 0 5%;
+    border-radius: 4% / 20%;
+}
+
+
+.bike-type img {
+    margin-left: -3%;
+    border-radius: 10% 0 0 10% / 20% 0 0 20%;
+    height: 100%;
+}
+
+
+.bike-type h3 {
+    padding: 2rem 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.bike-type p {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.bike-type-bottom {
+    margin-bottom: 5%;
+}
+
+.details {
+    background-color:var(--websitecolor);
+}
+
+
+.navbar-brand {
+    width: 130px;
+}
+
+
+.navbar-brand img {
+    height: 40px;
+    padding: 0;
+    animation: 3s cubic-bezier(.5,0,.39,1) 0s 1 slideInFromRight forwards;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.menu1 {
+    animation: 0.6s ease-out 1.25s 1 fadeIn forwards;
+}
+.menu2 {
+    animation: 0.6s ease-out 1.15s 1 fadeIn forwards;
+}
+.menu3 {
+    animation: 0.6s ease-out 1.05s 1 fadeIn forwards;
 }
