@@ -384,6 +384,9 @@
 .footer {
     background-color: var(--timelinepath);
 }
+.footer a {
+    color:#fff;
+}
 #nbMenuItem{
     font-weight:bold;
     color:white;
@@ -394,6 +397,35 @@
 /*----------------General Website Color------------------------------*/
 body {
     background-color: var(--websitecolor);
+}
+/* ----------------------------- Map CSS ----------------------------- */
+
+
+.carousel-inner {
+    border-radius: 3%;
+}
+
+.trail-list {
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:700px;
+    margin-bottom: 50px;
+    border-radius:10px 30px 30px 10px;
+}
+
+.custom-map {
+    position:relative; 
+    top:-50px; 
+}
+
+.mapcontainer {
+   margin-bottom: -50px;
+   padding-top:50px;
+}
+
+.map-contain {
+    border:5px solid #b8b5ab;
+    border-bottom: 0;
 }
 
 /* ----------------------------- Timeline CSS ----------------------------- */
@@ -658,156 +690,7 @@ body {
 .main-timeline .timeline:nth-child(10) .timeline-content {
     margin: 52px 0;
 }
-/* ----------------------------- Map CSS ----------------------------- */
 
-
-.carousel-inner {
-    border-radius: 3%;
-}
-
-.trail-list {
-    overflow-x:hidden;
-    overflow-y:scroll;
-    height:700px;
-    background-color:#6f5351;
-    margin-bottom: 50px;
-}
-
-.footer a {
-    color:#fff;
-}
-
-.custom-map {
-    position:relative; 
-    top:-50px; 
-
-
-}
-
-.mapcontainer {
-   margin-bottom: -50px;
-}
-
-.map-contain {
-    border:5px solid #b8b5ab;
-    border-bottom: 0;
-}
-
-
-.card-button {
-    background: var(--greypath);
-    transition: transform 250ms linear;
-}
-
-.card {
-    background: var(--greypath);
-    border-radius: 15px;
-    border: 5px solid var(--greypath);
-    transition:0.1s ease-in;
-    
-}
-.card:hover,.timeline-image{
-    transform:scale(1.03,1.03);
-    transition:0.1s ease-in;
-    
-}
-
-
-.container-fluid4 {
-    position: relative;
-    text-align: center;
-    width:100%;
-    min-height:853px; 
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/trailshowcase.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size:100px;
-    animation: fadein 0.5s linear forwards;
-  }
-
-.trail-details {
-    background-color:#b8b5ab;
-}
-
-.map {
-    background-color:#b8b5ab;
-}
-
-
-.bike-type {
-    background-color: #414141;
-    margin: 4% 5% 0 5%;
-    border-radius: 4% / 20%;
-}
-
-
-.bike-type img {
-    margin-left: -3%;
-    border-radius: 10% 0 0 10% / 20% 0 0 20%;
-    height: 100%;
-}
-
-
-.bike-type h3 {
-    padding: 2rem 0 1rem 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-}
-
-.bike-type p {
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.bike-type-bottom {
-    margin-bottom: 5%;
-}
-
-.details {
-    background-color:var(--websitecolor);
-}
-
-
-.navbar-brand {
-    width: 130px;
-}
-
-
-.navbar-brand img {
-    height: 40px;
-    padding: 0;
-    animation: 3s cubic-bezier(.5,0,.39,1) 0s 1 slideInFromRight forwards;
-}
-
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-100px);
-    }
-}
-
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 .main-timeline .timeline:nth-child(11) .timeline-content {
     margin: 47px 0;
@@ -960,6 +843,15 @@ body {
     width:100%;
     min-height:853px;
     background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/showcase-img.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container-fluid4 {
+    position: relative;
+    text-align: center;
+    width:100%;
+    min-height:853px; 
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(/img/trailshowcase.jpg);
     background-size: cover;
     background-position: center;
 }

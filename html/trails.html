@@ -10,50 +10,52 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100; height:100px">
-        <div class="container">
-            <a href="../index.html" class="navbar-brand">
-                <img src="../img/biking-logo.png" alt="bike" class="d-inline-block w-75 h-75">
-            </a>
-    
-            <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <!-- Collapsible navbar menu with custom hover underline CSS animation-->
-            <div class="collapse navbar-collapse " id="navmenu">
-                <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ">
-                        <a href="../html/diagram.html" class="nav-link hover-underline-animation menu1 "
-                            id="nbMenuItem">Diagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../html/history.html" class="nav-link hover-underline-animation menu2"
-                            id="nbMenuItem">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../html/trails.html" class="nav-link hover-underline-animation menu3"
-                            id="nbMenuItem">Trails</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="container-fluid4">
+        <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100; height:100px">
+            <div class="container">
+                <a href="../index.html" class="navbar-brand">
+                    <img src="../img/biking-logo.png" alt="bike" class="d-inline-block w-75 h-75">
+                </a>
 
-    <div class="container-fluid4
-    ">
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible navbar menu with custom hover underline CSS animation-->
+                <div class="collapse navbar-collapse " id="navmenu">
+                    <!-- Links to hamburger menu button-->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ">
+                            <a href="../html/diagram.html" class="nav-link hover-underline-animation menu1 "
+                                id="nbMenuItem">Diagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/history.html" class="nav-link hover-underline-animation menu2"
+                                id="nbMenuItem">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/trails.html" class="nav-link hover-underline-animation menu3"
+                                id="nbMenuItem">Trails</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <h1 class="centered text-light">Trails</h1>
+
     </div>
 
+    <!-- Map + Sidebar Overview -->
     <section class="map">
         <div class="d-flex mapcontainer">
-            <div class="p-1 container col-4 trail-list text-light">
+            <div class="p-1 container col-4 trail-list">
+                <!-- Item 1 -->
                 <div class="trail-item">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
                         data-bs-interval="false">
@@ -86,7 +88,7 @@
                     <p>A moderately challenging trail that is fairly popular for bikers and hikers.</p>
                 </div>
 
-
+                <!-- Item 2 -->
                 <div class="trail-item">
                     <div id="carousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
@@ -118,7 +120,7 @@
                     <p>A very challenging trail that you will not encounter many people on.</p>
                 </div>
 
-
+                <!-- Item 3 -->
                 <div class="trail-item">
                     <div id="carousel2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
@@ -152,7 +154,7 @@
 
 
             </div>
-
+            <!-- Map Embed -->
             <div class="map-contain container col-8 p-0 overflow-hidden">
                 <iframe class="custom-map"
                     src="https://www.google.com/maps/d/u/0/embed?mid=1gA2bumuFHHheahaK9oRxLltLY5ZGGbg&ehbc=2E312F"
@@ -160,7 +162,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Detailed Trail Overviews -->
     <section class="details p-2">
         <div data-aos="fade-right" data-aos-offset="100" data-aos-duration="300" data-aos-easing="linear">
             <div class="bike-type row">
@@ -219,7 +221,7 @@
     <!-- Footer (Requiers BootStrap Icon CSS)-->
     <footer class="p-3 footer text-light text-center position-relative">
         <div class="container">
-            <p class="m-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=@example.com"
+            <p class="m-1"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=help@bikes.com"
                     target="_blank">Contact Us</a></p>
             <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram h1 p-1"></i></a>
             <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook h1 p-1"></i></a>
@@ -236,7 +238,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="/js/scripts.js" type="module" defer></script>
+    <script src="../js/scripts.js" type="module" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
