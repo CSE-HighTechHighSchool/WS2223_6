@@ -1,4 +1,5 @@
 
+
 document.querySelectorAll('.card-button').forEach((button) => {
     let count = 0;
 
@@ -13,10 +14,12 @@ document.querySelectorAll('.card-button').forEach((button) => {
     })
 });//Rotates the card buttons on click
 
+
 AOS.init({
   offset: 400, 
   delay: 0, 
   duration: 1000 
+
 });//Initializes the onScroll timeline animations
 
   
