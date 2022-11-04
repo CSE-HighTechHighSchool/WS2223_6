@@ -66,13 +66,13 @@
 
 /* ----------------------------- Trails Description CSS ----------------------------- */
 .trails-desc {
-    margin-top: 5%;
-    padding-top: 40px;
+    
     background-color: #4B8165;
 }
 
 .trails-desc-header {
     width:100%;
+    padding: 3%;
 }
 
 .trails-desc-header img {
@@ -154,7 +154,9 @@
 }
 
 .diagram-desc-header {
-    padding: 3%;
+    
+    margin-top: 5%;
+    padding-top: 40px;
 }
 
 .diagram-desc-header h1 {
@@ -246,7 +248,7 @@
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
-    border: .5vw solid rgb(49, 119, 28);
+    border: .5vw solid #9c4b45;
     cursor: pointer;
     transition: .4s ease-in;
     background-color: rgb(226, 250, 231);
@@ -255,7 +257,7 @@
 
 .diagram-icon:hover {
     transform: scale(12, 12);
-    border: .1vw solid rgb(49, 119, 28);
+    border: .1vw solid var(--timelinepath);
     z-index: 10;
 }
 
