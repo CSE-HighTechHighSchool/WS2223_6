@@ -814,7 +814,7 @@ body {
     text-align:center;
     width:100%;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/historyofbikes.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/historyofbikes.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -833,7 +833,7 @@ body {
     width:100%;
     top:80px;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/Biking\ Famous\ People.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/Biking\ Famous\ People.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -842,7 +842,7 @@ body {
     text-align:center;
     width:100%;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/showcase-img.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/showcase-img.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -851,7 +851,7 @@ body {
     text-align: center;
     width:100%;
     min-height:853px; 
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/trailshowcase.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/trailshowcase.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -860,7 +860,7 @@ body {
     text-align: center;
     width:100%;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/biking-parts.png);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/biking-parts.png");
     background-size: cover;
     background-position: center;
 }
@@ -869,7 +869,7 @@ body {
     text-align: center;
     width:100%;
     min-height:853px;
-    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url(../img/lots-of-bikes.jpg);
+    background-image:linear-gradient(rgba(62, 62, 62, 0.60), rgba(62, 62, 62, 0.6)),url("../img/lots-of-bikes.jpg");
     background-size: cover;
     background-position: center;
 }
