@@ -430,6 +430,12 @@ body {
     border-bottom: 0;
 }
 
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 100px;
+  height: 100px;
+}
+
 /* ----------------------------- Timeline CSS ----------------------------- */
 /*Some timeline code is adapted from https://bootsnipp.com/snippets/Q0ppE    */
 .main-timeline {
