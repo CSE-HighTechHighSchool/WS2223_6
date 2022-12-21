@@ -9,13 +9,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyDnuQcSFKiwYGOwzkCL9im6KNRE__7bcWU",
-    authDomain: "researchwebsite-837b5.firebaseapp.com",
-    databaseURL: "https://researchwebsite-837b5-default-rtdb.firebaseio.com",
-    projectId: "researchwebsite-837b5",
-    storageBucket: "researchwebsite-837b5.appspot.com",
-    messagingSenderId: "559375517927",
-    appId: "1:559375517927:web:d6a1e591efad6db2b1fa42"
+    apiKey: "AIzaSyB9nu1EaQ2mUNy0nZWbQqvVN4vH7vADIQw",
+    authDomain: "stealsonwheels.firebaseapp.com",
+    databaseURL: "https://stealsonwheels-default-rtdb.firebaseio.com",
+    projectId: "stealsonwheels",
+    storageBucket: "stealsonwheels.appspot.com",
+    messagingSenderId: "884737108378",
+    appId: "1:884737108378:web:07d9bd882cc19bdd477223"
   };
 
   // Initialize Firebase
@@ -86,7 +86,7 @@ function logIn(user){
     //session storage will be cleared with a signOut() function in the home.js
     if(!keepLoggedIn){
         sessionStorage.setItem('user', JSON.stringify(user));
-        window.location = "home.html"; //browser redirect to home page
+        window.location = "tracker.html"; //browser redirect to home page
 
     }
     //local storage is permanent(unless you signOut)

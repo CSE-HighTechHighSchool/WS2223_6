@@ -13,6 +13,9 @@
     background-color: rgba(200,200,200,60);
 }
 
+
+
+
 .buy-now h3 {
     margin: 0 5rem;
 }
@@ -399,9 +402,10 @@
 }
 
 /*----------------General Website Color------------------------------*/
-body {
+.signInPage,body {
     background-color: var(--websitecolor);
 }
+
 /* ----------------------------- Map CSS ----------------------------- */
 
 
