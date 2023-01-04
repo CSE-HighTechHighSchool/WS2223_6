@@ -70,6 +70,8 @@ function signOutUser() {
 
 // --------------------------- Home Page Loading -----------------------------
 window.onload = function() {
+  getUsername();
+
   // ------------------------- Set Welcome Message -------------------------
   // getUsername();
   // if (currentUser == null) {
@@ -106,6 +108,48 @@ window.onload = function() {
 
     console.log(date, trail, distance);
 
-    setData(userID, year, month, day, temperature);
+    if (validate(date, trail, distance)) {
+      updateData(userID, date, trail, distance);
+    }
   }
+}
+
+
+// -------------------------Update data in database --------------------------
+function updateData(userID, date, trail, distance) {
+  // Must use brackets around variable name to use as a key
+  update(ref(db, 'users/' + userID + '/data/' + trail), {
+    [date]: distance
+  })
+  .then(() => {
+    alert('Data updated successfully.');
+  })
+  .catch((error) => {
+    alert('There was an error. Error: ' + error);
+  })
+}
+
+function validate(date, trail, distance) {
+  if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
+    || isEmptyorSpaces(distance)) {
+      alert("Please complete all fields.");
+      return false;
+  }
+
+  if (!isNumeric(distance)) {
+    alert("The distance must be a number")
+    return false;
+  }
+
+  return true;
+}
+
+// -------------- Check if a string is a number ---------------------- //
+function isNumeric(str) { // we only process strings!  
+  return !isNaN(str) && !isNaN(parseFloat(str))
+}
+
+// --------------- Check for null, empty ("") or all spaces only ------------//
+function isEmptyorSpaces(str){
+  return str === null || str.match(/^ *$/) !== null
 }
