@@ -28,3 +28,128 @@ const auth = getAuth();
 
 // Return instance of the app's FRD
 const db = getDatabase(app);
+
+// --------------------- Get reference values -----------------------------
+//let userLink = document.getElementById('welcome-message')    // Username navbar
+//let signOutLink = document.getElementById('signOut'); // Signout link
+let welcome = document.getElementById('welcome-message');      // Welcome header
+let currentUser = null;                               // Initialize currentUser to null
+
+
+
+// ----------------------- Get User's Name ------------------------------
+function getUsername() {
+  // Grab the value for the 'keep logged in' switch
+  let keepLoggedIn = localStorage.getItem('keepLoggedIn');
+
+  // Grab user information passed from signIn.js
+  if (keepLoggedIn == 'yes') {
+    currentUser = JSON.parse(localStorage.getItem('user'));
+  } else {
+    currentUser = JSON.parse(sessionStorage.getItem('user'));
+  }
+}
+
+
+// Sign-out function that will remove user info from local/session storage and
+// sign-out from FRD
+function signOutUser() {
+  sessionStorage.removeItem('user');        // Clear session storage
+  localStorage.removeItem('user');          // Clear local stoage
+  localStorage.removeItem('keepLoggedIn');
+
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+
+  window.location = 'home.html'
+}
+
+
+// --------------------------- Home Page Loading -----------------------------
+window.onload = function() {
+  getUsername();
+
+  // ------------------------- Set Welcome Message -------------------------
+  // getUsername();
+  // if (currentUser == null) {
+  //   userLink.innerText = 'Create New Account';
+  //   userLink.classList.replace('nav-link', 'btn');
+  //   userLink.classList.add('btn-primary');
+  //   userLink.href = 'register.html';
+
+  //   signOutLink.innerText = 'Sign In';
+  //   signOutLink.classList.replace('nav-link', 'btn');
+  //   signOutLink.classList.add('btn-success');
+  //   signOutLink.href = 'signIn.html';
+  // } else {
+  //   userLink.innerText = currentUser.firstname;
+  //   welcome.innerText = 'Welcome ' + currentUser.firstname;
+  //   userLink.classList.replace('btn', 'nav-link');
+  //   userLink.classList.add('btn-primary');
+  //   userLink.href = '#';
+
+  //   signOutLink.innerText = 'Sign Out';
+  //   signOutLink.classList.replace('btn', 'nav-link');
+  //   signOutLink.classList.add('btn-success');
+  //   document.getElementById('signOut').onclick = function() {
+  //     signOutUser();
+  //   }
+  // }
+
+  // Set data
+  document.getElementById('set').onclick = function() {
+    const date = document.getElementById('date').value;
+    const trail = document.getElementById('trail').value;
+    const distance = document.getElementById('distance').value;
+    const userID = currentUser.uid;
+
+    console.log(date, trail, distance);
+
+    if (validate(date, trail, distance)) {
+      updateData(userID, date, trail, distance);
+    }
+  }
+}
+
+
+// -------------------------Update data in database --------------------------
+function updateData(userID, date, trail, distance) {
+  // Must use brackets around variable name to use as a key
+  update(ref(db, 'users/' + userID + '/data/' + trail), {
+    [date]: distance
+  })
+  .then(() => {
+    alert('Data updated successfully.');
+  })
+  .catch((error) => {
+    alert('There was an error. Error: ' + error);
+  })
+}
+
+function validate(date, trail, distance) {
+  if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
+    || isEmptyorSpaces(distance)) {
+      alert("Please complete all fields.");
+      return false;
+  }
+
+  if (!isNumeric(distance)) {
+    alert("The distance must be a number")
+    return false;
+  }
+
+  return true;
+}
+
+// -------------- Check if a string is a number ---------------------- //
+function isNumeric(str) { // we only process strings!  
+  return !isNaN(str) && !isNaN(parseFloat(str))
+}
+
+// --------------- Check for null, empty ("") or all spaces only ------------//
+function isEmptyorSpaces(str){
+  return str === null || str.match(/^ *$/) !== null
+}
