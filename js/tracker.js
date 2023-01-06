@@ -99,6 +99,10 @@ window.onload = function() {
   //   }
   // }
 
+  // Grab data and create chart
+  const userData = getDataSet(currentUser.uid);
+  createChart(userData);
+
   // Set data
   document.getElementById('set').onclick = function() {
     const date = document.getElementById('date').value;
@@ -129,6 +133,43 @@ function updateData(userID, date, trail, distance) {
   })
 }
 
+
+// ---------------------------Get a user's entire data set --------------------------
+async function getDataSet(userID) {
+  const trails = [];
+  const miles = [];
+  const dates = [];
+
+  const dbref = ref(db);
+
+  // Wait for all data to be pulled from the FRD
+  // Provide path through the nodes to the data
+  await get(child(dbref, 'users/' + userID + '/data')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+
+      snapshot.forEach(child => {
+        // Iterate through all children of a trail
+        for (var key2 in child.val()) {
+          // Push values to arrays
+          trails.push(child.key);
+          miles.push(child.val()[key2]);
+          dates.push(key2);
+        }
+      });
+    } else {
+      alert('No data found')
+    }
+  })
+  .catch((error) => {
+    alert('unsuccessful, error ' + error);
+  });
+
+  return {trails, miles, dates};
+}
+
+
+//------------------------- Validate set data options ------------------------//
 function validate(date, trail, distance) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
     || isEmptyorSpaces(distance)) {
@@ -152,4 +193,43 @@ function isNumeric(str) { // we only process strings!
 // --------------- Check for null, empty ("") or all spaces only ------------//
 function isEmptyorSpaces(str){
   return str === null || str.match(/^ *$/) !== null
+}
+
+
+
+
+
+
+// ----------------------------- Chart.js ----------------------------------//
+async function createChart(data) {
+  const ctx = document.getElementById('milesChart');
+  const myChart = new Chart(ctx, {
+  type: 'scatter',
+  data: {
+      labels: data.dates,
+      datasets: [
+          {
+              label: 'Combined Global Land-Surface Air and Sea-Surface Temperature in °C',
+              data: data.yTemps,
+              backgroundColor: 'rgba(255, 159, 64, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          },
+          {
+              label: 'Combined N.H. Land-Surface Air and Sea-Surface Temperature in °C',
+              data: data.yNHtemps,
+              backgroundColor: 'rgba(0, 200, 64, 0.2)',
+              borderColor: 'rgba(0, 156, 132, 1)',
+              borderWidth: 1
+          },
+          {
+              label: 'Combined S.H. Land-Surface Air and Sea-Surface Temperature in °C',
+              data: data.ySHtemps,
+              backgroundColor: 'rgba(0, 64, 200, 0.2)',
+              borderColor: 'rgba(0, 130, 160, 1)',
+              borderWidth: 1
+          }
+      ]
+  }
+});
 }
