@@ -99,9 +99,8 @@ window.onload = function() {
   //   }
   // }
 
-  // Grab data and create chart
-  const userData = getDataSet(currentUser.uid);
-  createChart(userData);
+  // Create chart
+  createChart(currentUser.uid);
 
   // Set data
   document.getElementById('set').onclick = function() {
@@ -137,8 +136,7 @@ function updateData(userID, date, trail, distance) {
 // ---------------------------Get a user's entire data set --------------------------
 async function getDataSet(userID) {
   const trails = [];
-  const miles = [];
-  const dates = [];
+  const rides = [];
 
   const dbref = ref(db);
 
@@ -149,12 +147,16 @@ async function getDataSet(userID) {
       console.log(snapshot.val());
 
       snapshot.forEach(child => {
+        // Push values to arrays
+        trails.push(child.key);
+        rides.push([]);
+
         // Iterate through all children of a trail
         for (var key2 in child.val()) {
           // Push values to arrays
-          trails.push(child.key);
-          miles.push(child.val()[key2]);
-          dates.push(key2);
+          const date = new Date(key2);
+          const miles = child.val()[key2];
+          rides[rides.length-1].push({x : date, y : miles});
         }
       });
     } else {
@@ -165,7 +167,7 @@ async function getDataSet(userID) {
     alert('unsuccessful, error ' + error);
   });
 
-  return {trails, miles, dates};
+  return {trails, rides};
 }
 
 
@@ -201,34 +203,23 @@ function isEmptyorSpaces(str){
 
 
 // ----------------------------- Chart.js ----------------------------------//
-async function createChart(data) {
+async function createChart(uid) {
+  const data = await getDataSet(uid);
+  console.log(data);
+
   const ctx = document.getElementById('milesChart');
   const myChart = new Chart(ctx, {
   type: 'scatter',
   data: {
-      labels: data.dates,
       datasets: [
-          {
-              label: 'Combined Global Land-Surface Air and Sea-Surface Temperature in °C',
-              data: data.yTemps,
-              backgroundColor: 'rgba(255, 159, 64, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
-              borderWidth: 1
-          },
-          {
-              label: 'Combined N.H. Land-Surface Air and Sea-Surface Temperature in °C',
-              data: data.yNHtemps,
-              backgroundColor: 'rgba(0, 200, 64, 0.2)',
-              borderColor: 'rgba(0, 156, 132, 1)',
-              borderWidth: 1
-          },
-          {
-              label: 'Combined S.H. Land-Surface Air and Sea-Surface Temperature in °C',
-              data: data.ySHtemps,
-              backgroundColor: 'rgba(0, 64, 200, 0.2)',
-              borderColor: 'rgba(0, 130, 160, 1)',
-              borderWidth: 1
-          }
+        {
+          label: data.trails[0],
+          data: data.rides[0]
+        },
+        {
+          label: data.trails[1],
+          data: data.rides[1]
+        }
       ]
   }
 });
