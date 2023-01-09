@@ -400,13 +400,18 @@
     opacity:0;
     font-size:x-large;
 }
-
-/*----------------General Website Color------------------------------*/
-.signInPage,body {
-    background-color: var(--websitecolor);
-    overflow:hidden;
+.nb-bg-color{
+    background-color: var(--timelinepath);
 }
 
+/*----------------General Website Color------------------------------*/
+.signInPage {
+    overflow:hidden;
+    background-color: var(--websitecolor);
+}
+body {
+    background-color: var(--websitecolor);
+}
 /* ----------------------------- Map CSS ----------------------------- */
 
 
