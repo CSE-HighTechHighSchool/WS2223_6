@@ -154,7 +154,7 @@ async function getDataSet(userID) {
         // Iterate through all children of a trail
         for (var key2 in child.val()) {
           // Push values to arrays
-          const date = new Date(key2);
+          const date = key2;
           const miles = child.val()[key2];
           rides[rides.length-1].push({x : date, y : miles});
         }
@@ -221,6 +221,47 @@ async function createChart(uid) {
           data: data.rides[1]
         }
       ]
-  }
+  },
+  options: {
+    responsive: true,                   // Re-size based on screen size
+    scales: {                           // x & y axes display options
+        x: {
+            type: 'time',
+            title: {
+                display: true,
+                text: 'Date',
+                font: {
+                    size: 20
+                },
+            }
+        },
+        y: {
+            beginAtZero: true,
+            title: {
+                display: true,
+                text: 'Miles Ridden',
+                font: {
+                    size: 20
+                },
+            }
+        }
+    },
+    plugins: {                          // title and legend display options
+        title: {
+            display: true,
+            text: 'Your Rides',
+            font: {
+                size: 24
+            },
+            padding: {
+                top: 10,
+                bottom: 30
+            }
+        },
+        legend: {
+            position: 'top'
+        }
+    }
+}
 });
 }
