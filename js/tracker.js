@@ -72,8 +72,7 @@ function signOutUser() {
 window.onload = function() {
   getUsername();
 
-  // ------------------------- Set Welcome Message -------------------------
-  // getUsername();
+  //------------------------- Set Welcome Message -------------------------
   // if (currentUser == null) {
   //   userLink.innerText = 'Create New Account';
   //   userLink.classList.replace('nav-link', 'btn');
@@ -102,7 +101,7 @@ window.onload = function() {
   // Create chart
   createChart(currentUser.uid);
 
-  // Set data
+  // Update data
   document.getElementById('set').onclick = function() {
     const date = document.getElementById('date').value;
     const trail = document.getElementById('trail').value;
@@ -115,10 +114,36 @@ window.onload = function() {
       updateData(userID, date, trail, distance);
     }
   }
+
+  // Get data
+  document.getElementById('get').onclick = function() {
+    const date = document.getElementById('date-get').value;
+    const trail = document.getElementById('trail-get').value;
+    const userID = currentUser.uid;
+
+    console.log(date, trail);
+
+    if (validateGet(date, trail)) {
+      getData(userID, date, trail);
+    }
+  }
+
+  // Remove data
+  document.getElementById('remove').onclick = function() {
+    const date = document.getElementById('date-get').value;
+    const trail = document.getElementById('trail-get').value;
+    const userID = currentUser.uid;
+
+    console.log(date, trail);
+
+    if (validateGet(date, trail)) {
+      removeData(userID, date, trail);
+    }
+  }
 }
 
 
-// -------------------------Update data in database --------------------------
+// ------------------------- Update data in database --------------------------
 function updateData(userID, date, trail, distance) {
   // Must use brackets around variable name to use as a key
   update(ref(db, 'users/' + userID + '/data/' + trail), {
@@ -129,6 +154,26 @@ function updateData(userID, date, trail, distance) {
   })
   .catch((error) => {
     alert('There was an error. Error: ' + error);
+  })
+}
+
+//--------------------------- Get data in database -------------------------
+function getData(userID, date, trail) {
+  let milesVal = document.getElementById('distance-get');
+
+  const dbref = ref(db); // Firebase parameter required for 'get'
+
+  // Provide the path through the nodes to the data
+  get(child(dbref, 'users/' + userID + '/data/' + trail)).then((snapshot) => {
+    if (snapshot.exists()) {
+      milesVal.innerHTML = "Miles Ridden: " + snapshot.val()[date];
+      console.log(snapshot.val()[date])
+    } else {
+      alert('No data found');
+    }
+  })
+  .catch((error) => {
+    alert(error);
   })
 }
 
@@ -170,8 +215,21 @@ async function getDataSet(userID) {
   return {trails, rides};
 }
 
+// -------------------------Delete a day's data from FRD ---------------------
+function removeData(userID, date, trail) {
+  remove(ref(db, 'users/' + userID + '/data/' + trail + '/' + date)).then(() => {
+    alert('Data removed successfully');
+  })
+  .catch((error) => {
+    alert(error)
+  })
+}
 
-//------------------------- Validate set data options ------------------------//
+
+
+
+
+//------------------------- Validate set & get data options ------------------------//
 function validate(date, trail, distance) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
     || isEmptyorSpaces(distance)) {
@@ -182,6 +240,15 @@ function validate(date, trail, distance) {
   if (!isNumeric(distance)) {
     alert("The distance must be a number")
     return false;
+  }
+
+  return true;
+}
+
+function validateGet(date, trail) {
+  if (isEmptyorSpaces(date) || isEmptyorSpaces(trail)) {
+      alert("Please complete all fields.");
+      return false;
   }
 
   return true;
