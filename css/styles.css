@@ -404,6 +404,7 @@
 /*----------------General Website Color------------------------------*/
 .signInPage,body {
     background-color: var(--websitecolor);
+    overflow:hidden;
 }
 
 /* ----------------------------- Map CSS ----------------------------- */
@@ -894,8 +895,56 @@
 }
 
 
+/*----Sign In  Page---*/
+.emailform{
+    position:fixed;
+    top:50%;
+    width:200px;
+    left:44%;
+
+
+}
+.continueButton{
+    position:fixed;
+    top:50%;
+    width:200px;
+    left:60%;
+
+
+    
+}
+.pwdform{
+    position:fixed;
+    top:50%;
+    width:200px;
+    transform-origin:-800px 50%;
+    left:44%;
+    animation: rotatein 3s linear ;
+
+
+}
+
+.bicycletire{
+    position:fixed;
+    z-index:1;
+    left:-600px;
+    overflow:hidden;
+    bottom:-140px;
+    animation: rotatein 3s linear ;
+    
+
+}
 
 /*---Controls the Animations--*/
+@keyframes rotatein{
+    from {
+        transform: rotate(-40deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
 @keyframes cardSizeIncrease{
     from{
         transform:scale(1);

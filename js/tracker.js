@@ -99,6 +99,9 @@ window.onload = function() {
   //   }
   // }
 
+  // Create chart
+  createChart(currentUser.uid);
+
   // Set data
   document.getElementById('set').onclick = function() {
     const date = document.getElementById('date').value;
@@ -129,6 +132,46 @@ function updateData(userID, date, trail, distance) {
   })
 }
 
+
+// ---------------------------Get a user's entire data set --------------------------
+async function getDataSet(userID) {
+  const trails = [];
+  const rides = [];
+
+  const dbref = ref(db);
+
+  // Wait for all data to be pulled from the FRD
+  // Provide path through the nodes to the data
+  await get(child(dbref, 'users/' + userID + '/data')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+
+      snapshot.forEach(child => {
+        // Push values to arrays
+        trails.push(child.key);
+        rides.push([]);
+
+        // Iterate through all children of a trail
+        for (var key2 in child.val()) {
+          // Push values to arrays
+          const date = key2;
+          const miles = child.val()[key2];
+          rides[rides.length-1].push({x : date, y : miles});
+        }
+      });
+    } else {
+      alert('No data found')
+    }
+  })
+  .catch((error) => {
+    alert('unsuccessful, error ' + error);
+  });
+
+  return {trails, rides};
+}
+
+
+//------------------------- Validate set data options ------------------------//
 function validate(date, trail, distance) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
     || isEmptyorSpaces(distance)) {
@@ -152,4 +195,73 @@ function isNumeric(str) { // we only process strings!
 // --------------- Check for null, empty ("") or all spaces only ------------//
 function isEmptyorSpaces(str){
   return str === null || str.match(/^ *$/) !== null
+}
+
+
+
+
+
+
+// ----------------------------- Chart.js ----------------------------------//
+async function createChart(uid) {
+  const data = await getDataSet(uid);
+  console.log(data);
+
+  const ctx = document.getElementById('milesChart');
+  const myChart = new Chart(ctx, {
+  type: 'scatter',
+  data: {
+      datasets: [
+        {
+          label: data.trails[0],
+          data: data.rides[0]
+        },
+        {
+          label: data.trails[1],
+          data: data.rides[1]
+        }
+      ]
+  },
+  options: {
+    responsive: true,                   // Re-size based on screen size
+    scales: {                           // x & y axes display options
+        x: {
+            type: 'time',
+            title: {
+                display: true,
+                text: 'Date',
+                font: {
+                    size: 20
+                },
+            }
+        },
+        y: {
+            beginAtZero: true,
+            title: {
+                display: true,
+                text: 'Miles Ridden',
+                font: {
+                    size: 20
+                },
+            }
+        }
+    },
+    plugins: {                          // title and legend display options
+        title: {
+            display: true,
+            text: 'Your Rides',
+            font: {
+                size: 24
+            },
+            padding: {
+                top: 10,
+                bottom: 30
+            }
+        },
+        legend: {
+            position: 'top'
+        }
+    }
+}
+});
 }
