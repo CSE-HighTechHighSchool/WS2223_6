@@ -909,34 +909,7 @@ body {
 }
 
 
-/*----Sign In  Page---*/
-.emailform{
-    position:fixed;
-    top:50%;
-    width:200px;
-    left:44%;
 
-
-}
-.continueButton{
-    position:fixed;
-    top:50%;
-    width:200px;
-    left:60%;
-
-
-    
-}
-.pwdform{
-    position:fixed;
-    top:50%;
-    width:200px;
-    transform-origin:-800px 50%;
-    left:44%;
-    animation: rotatein 3s linear ;
-
-
-}
 
 .bicycletire{
     position:fixed;
@@ -1048,6 +1021,10 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.signin-card-body{
+    height:400px;
 }
 
 
