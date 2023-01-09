@@ -72,8 +72,7 @@ function signOutUser() {
 window.onload = function() {
   getUsername();
 
-  // ------------------------- Set Welcome Message -------------------------
-  // getUsername();
+  //------------------------- Set Welcome Message -------------------------
   // if (currentUser == null) {
   //   userLink.innerText = 'Create New Account';
   //   userLink.classList.replace('nav-link', 'btn');
@@ -102,7 +101,7 @@ window.onload = function() {
   // Create chart
   createChart(currentUser.uid);
 
-  // Set data
+  // Update data
   document.getElementById('set').onclick = function() {
     const date = document.getElementById('date').value;
     const trail = document.getElementById('trail').value;
@@ -115,10 +114,36 @@ window.onload = function() {
       updateData(userID, date, trail, distance);
     }
   }
+
+  // Get data
+  document.getElementById('get').onclick = function() {
+    const date = document.getElementById('date-get').value;
+    const trail = document.getElementById('trail-get').value;
+    const userID = currentUser.uid;
+
+    console.log(date, trail);
+
+    if (validateGet(date, trail)) {
+      getData(userID, date, trail);
+    }
+  }
+
+  // Remove data
+  document.getElementById('remove').onclick = function() {
+    const date = document.getElementById('date-get').value;
+    const trail = document.getElementById('trail-get').value;
+    const userID = currentUser.uid;
+
+    console.log(date, trail);
+
+    if (validateGet(date, trail)) {
+      removeData(userID, date, trail);
+    }
+  }
 }
 
 
-// -------------------------Update data in database --------------------------
+// ------------------------- Update data in database --------------------------
 function updateData(userID, date, trail, distance) {
   // Must use brackets around variable name to use as a key
   update(ref(db, 'users/' + userID + '/data/' + trail), {
@@ -132,8 +157,28 @@ function updateData(userID, date, trail, distance) {
   })
 }
 
+//--------------------------- Get data in database -------------------------
+function getData(userID, date, trail) {
+  let milesVal = document.getElementById('distance-get');
 
-// ---------------------------Get a user's entire data set --------------------------
+  const dbref = ref(db); // Firebase parameter required for 'get'
+
+  // Provide the path through the nodes to the data
+  get(child(dbref, 'users/' + userID + '/data/' + trail)).then((snapshot) => {
+    if (snapshot.exists()) {
+      milesVal.innerHTML = "Miles Ridden: " + snapshot.val()[date];
+      console.log(snapshot.val()[date])
+    } else {
+      alert('No data found');
+    }
+  })
+  .catch((error) => {
+    alert(error);
+  })
+}
+
+
+// ---------------------------Get a user's entire data set for the graph --------------------------
 async function getDataSet(userID) {
   const trails = [];
   const rides = [];
@@ -170,8 +215,24 @@ async function getDataSet(userID) {
   return {trails, rides};
 }
 
+// --------------------Get a trail's data for the table ----------------------
 
-//------------------------- Validate set data options ------------------------//
+
+// -------------------------Delete a day's data from FRD ---------------------
+function removeData(userID, date, trail) {
+  remove(ref(db, 'users/' + userID + '/data/' + trail + '/' + date)).then(() => {
+    alert('Data removed successfully');
+  })
+  .catch((error) => {
+    alert(error)
+  })
+}
+
+
+
+
+
+//------------------------- Validate set & get data options ------------------------//
 function validate(date, trail, distance) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
     || isEmptyorSpaces(distance)) {
@@ -182,6 +243,15 @@ function validate(date, trail, distance) {
   if (!isNumeric(distance)) {
     alert("The distance must be a number")
     return false;
+  }
+
+  return true;
+}
+
+function validateGet(date, trail) {
+  if (isEmptyorSpaces(date) || isEmptyorSpaces(trail)) {
+      alert("Please complete all fields.");
+      return false;
   }
 
   return true;
@@ -205,22 +275,27 @@ function isEmptyorSpaces(str){
 // ----------------------------- Chart.js ----------------------------------//
 async function createChart(uid) {
   const data = await getDataSet(uid);
-  console.log(data);
+
+  const colors = ["#A93226", "#2471A3", "#1E8449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+
+  const datasets = []
+  for (let i = 0; i < data.trails.length; i++) {
+    datasets.push({label: data.trails[i], 
+                    data: data.rides[i],
+                    borderColor: colors[i % 8],
+                    backgroundColor: colors[i % 8] + "55",
+                    borderWidth: 3,
+                    hoverBorderWidth: 3,
+                    pointRadius: 6,
+                    pointHoverRadius: 10
+                  })
+  }
 
   const ctx = document.getElementById('milesChart');
   const myChart = new Chart(ctx, {
   type: 'scatter',
   data: {
-      datasets: [
-        {
-          label: data.trails[0],
-          data: data.rides[0]
-        },
-        {
-          label: data.trails[1],
-          data: data.rides[1]
-        }
-      ]
+      datasets: datasets
   },
   options: {
     responsive: true,                   // Re-size based on screen size
@@ -233,6 +308,26 @@ async function createChart(uid) {
                 font: {
                     size: 20
                 },
+            },
+            ticks: {
+              stepSize: 1,
+              font: {
+                  size: 13
+              }
+            },
+            time: {
+              unit: "day",
+              displayFormats: {
+                 'millisecond': 'MMM DD',
+                 'second': 'MMM DD',
+                 'minute': 'MMM DD',
+                 'hour': 'MMM DD',
+                 'day': 'MMM DD',
+                 'week': 'MMM DD',
+                 'month': 'MMM DD',
+                 'quarter': 'MMM DD',
+                 'year': 'MMM DD',
+              }
             }
         },
         y: {
@@ -260,6 +355,17 @@ async function createChart(uid) {
         },
         legend: {
             position: 'top'
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              console.log(ctx);
+              const label = ctx.dataset.label;
+              const val = ctx.parsed.y + " mi";
+              const date = ctx.label.slice(0,-13);
+              return [label, val, date];
+            }
+          }
         }
     }
 }
