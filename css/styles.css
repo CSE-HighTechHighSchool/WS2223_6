@@ -405,7 +405,7 @@
 }
 
 /*----------------General Website Color------------------------------*/
-.signInPage {
+.signInPage,.registerPage {
     overflow:hidden;
     background-color: var(--websitecolor);
 }
@@ -812,14 +812,14 @@ body {
     transition: transform 250ms linear;
 }
 
-.card {
+.author .card {
     background: var(--greypath);
     border-radius: 15px;
     border: 5px solid var(--greypath);
     transition:0.1s ease-in;
     
 }
-.card:hover,.timeline-image{
+.author .card:hover,.timeline-image{
     transform:scale(1.03,1.03);
     transition:0.1s ease-in;
     
