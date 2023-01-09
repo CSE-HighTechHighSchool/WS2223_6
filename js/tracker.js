@@ -178,7 +178,7 @@ function getData(userID, date, trail) {
 }
 
 
-// ---------------------------Get a user's entire data set --------------------------
+// ---------------------------Get a user's entire data set for the graph --------------------------
 async function getDataSet(userID) {
   const trails = [];
   const rides = [];
@@ -214,6 +214,9 @@ async function getDataSet(userID) {
 
   return {trails, rides};
 }
+
+// --------------------Get a trail's data for the table ----------------------
+
 
 // -------------------------Delete a day's data from FRD ---------------------
 function removeData(userID, date, trail) {
@@ -272,22 +275,27 @@ function isEmptyorSpaces(str){
 // ----------------------------- Chart.js ----------------------------------//
 async function createChart(uid) {
   const data = await getDataSet(uid);
-  console.log(data);
+
+  const colors = ["#A93226", "#2471A3", "#1E8449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+
+  const datasets = []
+  for (let i = 0; i < data.trails.length; i++) {
+    datasets.push({label: data.trails[i], 
+                    data: data.rides[i],
+                    borderColor: colors[i % 8],
+                    backgroundColor: colors[i % 8] + "55",
+                    borderWidth: 3,
+                    hoverBorderWidth: 3,
+                    pointRadius: 6,
+                    pointHoverRadius: 10
+                  })
+  }
 
   const ctx = document.getElementById('milesChart');
   const myChart = new Chart(ctx, {
   type: 'scatter',
   data: {
-      datasets: [
-        {
-          label: data.trails[0],
-          data: data.rides[0]
-        },
-        {
-          label: data.trails[1],
-          data: data.rides[1]
-        }
-      ]
+      datasets: datasets
   },
   options: {
     responsive: true,                   // Re-size based on screen size
@@ -300,6 +308,26 @@ async function createChart(uid) {
                 font: {
                     size: 20
                 },
+            },
+            ticks: {
+              stepSize: 1,
+              font: {
+                  size: 13
+              }
+            },
+            time: {
+              unit: "day",
+              displayFormats: {
+                 'millisecond': 'MMM DD',
+                 'second': 'MMM DD',
+                 'minute': 'MMM DD',
+                 'hour': 'MMM DD',
+                 'day': 'MMM DD',
+                 'week': 'MMM DD',
+                 'month': 'MMM DD',
+                 'quarter': 'MMM DD',
+                 'year': 'MMM DD',
+              }
             }
         },
         y: {
@@ -327,6 +355,15 @@ async function createChart(uid) {
         },
         legend: {
             position: 'top'
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              const label = ctx.dataset.label;
+              const val = ctx.parsed.y
+              return ` ${label}, ${val} mi`;
+            }
+          }
         }
     }
 }
