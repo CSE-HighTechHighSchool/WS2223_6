@@ -359,9 +359,11 @@ async function createChart(uid) {
         tooltip: {
           callbacks: {
             label: function(ctx) {
+              console.log(ctx);
               const label = ctx.dataset.label;
-              const val = ctx.parsed.y
-              return ` ${label}, ${val} mi`;
+              const val = ctx.parsed.y + " mi";
+              const date = ctx.label.slice(0,-13);
+              return [label, val, date];
             }
           }
         }
