@@ -989,3 +989,9 @@
 
 
   
+/* ---------Register CSS---------- */
+.signUpForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
