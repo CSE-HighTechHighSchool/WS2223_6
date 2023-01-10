@@ -267,14 +267,14 @@
 }
 
 .diagram-icon p,
-.diagram-icon h4 {
+.diagram-icon h4, .diagram-icon h5{
     text-align: center;
     font-size: 0;
     opacity: 0.0;
     transition: .4s ease-in;
 }
 
-.diagram-icon h4 {
+.diagram-icon h4, .diagram-icon h5 {
     padding-top: .1vw;
     margin-bottom: .1vw;
     font-weight: bold;
@@ -286,13 +286,13 @@
 }
 
 .diagram-icon:hover p,
-.diagram-icon:hover h4 {
+.diagram-icon:hover h4,.diagram-icon:hover h5 {
     opacity: 1.0;
-    font-size: .11vw;
+    font-size: .10vw;
 }
 
-.diagram-icon:hover h4 {
-    font-size: .3vw;
+.diagram-icon:hover h4,.diagram-icon:hover h5 {
+    font-size: .2vw;
 }
 
 /* ----------------------------- Bike Diagram Icon Positions ------------------------- */
@@ -330,6 +330,10 @@
 #pedals {
     top: 70%;
     right: 53%;
+}
+#suspension{
+    top: 34%;
+    right: 28%;
 }
 
 /* ----------------------------- Bicycle Types CSS ----------------------------------- */
