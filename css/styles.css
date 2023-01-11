@@ -231,6 +231,8 @@
 }
 .menu3 {
     animation: 0.6s ease-out 1.05s 1 fadeIn forwards;
+}.menu4 {
+    animation: 0.6s ease-out 1.00s 1 fadeIn forwards;
 }
 
 /* ----------------------------- Bike Diagram CSS ------------------------------------ */
@@ -555,6 +557,7 @@ body {
 
     /*year of the event*/
 }
+
 
 
 [class*='timelineWheelLine'] {
@@ -1021,6 +1024,9 @@ body {
 .signin-card-body{
     height:400px;
 }
-
-
+/*--------Tracker Page------*/
+#distance-get{
+font-size: 15px;
+font-weight: 400;
+color: white;}
   
