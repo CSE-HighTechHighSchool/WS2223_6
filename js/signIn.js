@@ -24,8 +24,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
   const auth = getAuth()
   // return instance of yuor app's firebase real time database (FRD) 
   const db = getDatabase(app)
-
-
+  //Create variable for error message div
+  var err = document.getElementById("error")
 
 // ---------------------- Sign-In User ---------------------------------------//
 document.getElementById('signIn').onclick = function(){
@@ -72,9 +72,7 @@ document.getElementById('signIn').onclick = function(){
         });
     })
     .catch((error)=>{
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
+        err.style.color = "red"
     });
 
 }
@@ -94,7 +92,7 @@ function logIn(user){
     else{
         localStorage.setItem('keepLoggedIn','yes')
         localStorage.setItem('user', JSON.stringify(user));
-        window.location = "home.html"; //browser redirect to home page
+        window.location = "tracker.html"; //browser redirect to home page
     }
 
 
