@@ -31,7 +31,7 @@ const db = getDatabase(app);
 
 // --------------------- Get reference values -----------------------------
 //let userLink = document.getElementById('welcome-message')    // Username navbar
-//let signOutLink = document.getElementById('signOut'); // Signout link
+// let signOutLink = document.getElementById('signOut'); // Signout link
 let welcome = document.getElementById('welcome-message');      // Welcome header
 let currentUser = null;                               // Initialize currentUser to null
 
@@ -72,32 +72,7 @@ function signOutUser() {
 window.onload = function() {
   getUsername();
 
-  //------------------------- Set Welcome Message -------------------------
-  // if (currentUser == null) {
-  //   userLink.innerText = 'Create New Account';
-  //   userLink.classList.replace('nav-link', 'btn');
-  //   userLink.classList.add('btn-primary');
-  //   userLink.href = 'register.html';
-
-  //   signOutLink.innerText = 'Sign In';
-  //   signOutLink.classList.replace('nav-link', 'btn');
-  //   signOutLink.classList.add('btn-success');
-  //   signOutLink.href = 'signIn.html';
-  // } else {
-  //   userLink.innerText = currentUser.firstname;
-  //   welcome.innerText = 'Welcome ' + currentUser.firstname;
-  //   userLink.classList.replace('btn', 'nav-link');
-  //   userLink.classList.add('btn-primary');
-  //   userLink.href = '#';
-
-  //   signOutLink.innerText = 'Sign Out';
-  //   signOutLink.classList.replace('btn', 'nav-link');
-  //   signOutLink.classList.add('btn-success');
-  //   document.getElementById('signOut').onclick = function() {
-  //     signOutUser();
-  //   }
-  // }
-
+  
   // Create chart
   createChart(currentUser.uid);
 

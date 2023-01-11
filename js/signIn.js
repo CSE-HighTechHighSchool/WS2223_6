@@ -32,7 +32,9 @@ document.getElementById('signIn').onclick = function(){
     //get the users email and password for sign in
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
-    
+    // Get the input field
+
+
     //Attempt to sign user in
     signInWithEmailAndPassword(auth,email,password)
     .then((userCredential) =>{
@@ -47,8 +49,7 @@ document.getElementById('signIn').onclick = function(){
         })
         .then(() => {
             //user signed in!
-            alert('User signed in successfully')
-
+         
             //get snapshot of all the user info and pass it to the login() function
             // and stored in saession or local storage
             get(ref(db, 'users/'+user.uid + '/accountInfo')).then((snapshot)=>{

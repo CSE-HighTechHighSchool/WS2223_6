@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>Sign In</title>
 
     <!-- Bootstrap 5 CSS, Icons and custom CSS file links -->
-  
+
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -17,11 +18,11 @@
     <!-- Include 'defer' keyword for each to improve loading-->
     <script type="module" src="/js/signIn.js" defer></script>
 </head>
-<body>
-<section class="signInPage">
-    <div class="container">
 
-        <nav class="navbar navbar-expand-lg navbar-dark nb-bg-color" style="z-index:100; height:100px">
+<body>
+    <section class="signInPage" style="height:700px;">
+
+        <nav class="navbar navbar-expand-lg nb-bg-color " style="z-index:50;">
             <div class="container">
                 <a href="../index.html" class="navbar-brand">
                     <img src="../img/biking-logo.png" alt="bike" class="d-inline-block w-75 h-75">
@@ -52,28 +53,50 @@
                 </div>
             </div>
         </nav>
-    </div>
-
-
-
-    <section class = "signin">
+        <!--Sign in Functions in a Card-->
         <div class="container">
-            <br><h2 class="text-center">Sign In</h2><br>
-        </div>
-    
-        <!--Sign Up -->
-        <div class="signUpForm">     
-            <form>
-                <input type="email" placeholder="Email" id="loginEmail" class="form-control mb-3">
-                <input type="password" placeholder="Password" id="loginPassword" class="form-control mb-3">
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input " type="checkbox" role="switch" id="keepLoggedInSwitch" >
-                    <label class="form-check-label " for="flexSwitchCheckDefault">Keep me signed in</label>
+            <div class="row">
+                <div class="col-lg-11 m-auto ">
+                    <div class="card d-flex flex-row  mt-5 bg-secondary ">
+
+                        <img class="signinimage" src="/img/mountainsignin.jpg" style="height:400px; width:600px">
+
+                        <div class="d-flex  justify-content-center align-items-center nb-bg-color flex-column flex-grow-1">
+
+
+                            <div class="signin-card-body ">
+                                <div class="card-title text-black align-self-baseline">
+                                    <h3 class="text-center text-light py-2 font-weight-bold mb-0 mt-2">Sign-In</h3>
+                                </div>
+                                <form>
+                                    <input type="email" placeholder="Email" id="loginEmail"
+                                        class="form-control mb-4 w-100">
+                                    <input type="password" placeholder="Password" id="loginPassword"
+                                        class="form-control mb-4 w-100">
+                                    <div class="form-check form-switch mb-4">
+                                        <input class="form-check-input " type="checkbox" role="switch"
+                                            id="keepLoggedInSwitch">
+                                        <label class="form-check-label text-light" for="flexSwitchCheckDefault">Keep me
+                                            signed in</label>
+                                    </div>
+                                    <button type="button" id="signIn" name="signIn"
+                                        class="btn text-light btn-light btn-outline-light  mb-3 w-100" style="background-color:var(--timelinepath);">Sign In</button>
+                                    <a href="register.html" class="badge text-light mb-3 py-1 w-100">Don't have an
+                                        account?</a>
+
+                                    
+
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-                <button type = "button" id="signIn" name="signIn" class="btn btn-transparent btn-outline-light mb-3 w-100 text-black">Sign In</button>
-            </form>
+            </div>
         </div>
-        </section>
+
+
     </section>
 </body>
 
