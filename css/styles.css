@@ -987,5 +987,19 @@
     }
 }
 
+.signin-card-body{
+    height:400px;
+}
+/*--------Tracker Page------*/
+#distance-get{
+font-size: 15px;
+font-weight: 400;
+color: white;}
 
-  
+.chart-container {
+    background-color: var(--timelinepath);
+    padding: 2%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    border:rgba(62, 62, 62, 0.6) solid 1px
+}

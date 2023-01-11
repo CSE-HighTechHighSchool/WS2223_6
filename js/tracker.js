@@ -276,14 +276,15 @@ function isEmptyorSpaces(str){
 async function createChart(uid) {
   const data = await getDataSet(uid);
 
-  const colors = ["#A93226", "#2471A3", "#1E8449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+  const colors = ["#C93226", "#2471C3", "#1EB449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+  const mainColor = "#FFFFFF"
 
   const datasets = []
   for (let i = 0; i < data.trails.length; i++) {
     datasets.push({label: data.trails[i], 
                     data: data.rides[i],
                     borderColor: colors[i % 8],
-                    backgroundColor: colors[i % 8] + "55",
+                    backgroundColor: colors[i % 8] + "99",
                     borderWidth: 3,
                     hoverBorderWidth: 3,
                     pointRadius: 6,
@@ -304,12 +305,14 @@ async function createChart(uid) {
             type: 'time',
             title: {
                 display: true,
+                color: mainColor,
                 text: 'Date',
                 font: {
                     size: 20
                 },
             },
             ticks: {
+              color: mainColor,
               stepSize: 1,
               font: {
                   size: 13
@@ -328,22 +331,33 @@ async function createChart(uid) {
                  'quarter': 'MMM DD',
                  'year': 'MMM DD',
               }
+            },
+            grid: {
+              color: mainColor
             }
         },
         y: {
             beginAtZero: true,
             title: {
+                color: mainColor,
                 display: true,
                 text: 'Miles Ridden',
                 font: {
                     size: 20
                 },
+            },
+            ticks: {
+              color: mainColor
+            },
+            grid: {
+              color: mainColor
             }
         }
     },
     plugins: {                          // title and legend display options
         title: {
             display: true,
+            color: mainColor,
             text: 'Your Rides',
             font: {
                 size: 24
@@ -354,7 +368,10 @@ async function createChart(uid) {
             }
         },
         legend: {
-            position: 'top'
+            position: 'top',
+            labels: {
+              color: mainColor
+            }
         },
         tooltip: {
           callbacks: {
