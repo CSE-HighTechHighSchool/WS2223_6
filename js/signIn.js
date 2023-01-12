@@ -83,7 +83,6 @@ function logIn(user){
     //session storage is temporary (only active while browser open)
     //information is saved as a string(must convert JS object to string)
     //session storage will be cleared with a signOut() function in the home.js
-    alert(document.getElementById('keepLoggedInSwitch').checked)
     if(!keepLoggedIn){
         sessionStorage.setItem('user', JSON.stringify(user));
         window.location = "tracker.html"; //browser redirect to home page
