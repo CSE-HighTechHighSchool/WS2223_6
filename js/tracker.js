@@ -115,6 +115,10 @@ window.onload = function() {
       removeData(userID, date, trail);
     }
   }
+
+  document.getElementById('signOut').onclick = function() {
+    signOutUser()
+  }
 }
 
 
