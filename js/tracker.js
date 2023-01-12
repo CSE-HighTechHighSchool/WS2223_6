@@ -35,7 +35,8 @@ const db = getDatabase(app);
 let welcome = document.getElementById('welcome-message');      // Welcome header
 let currentUser = null;                               // Initialize currentUser to null
 
-
+// Initialize global chart variable
+let globChart = null;
 
 // ----------------------- Get User's Name ------------------------------
 function getUsername() {
@@ -87,6 +88,7 @@ window.onload = function() {
 
     if (validate(date, trail, distance)) {
       updateData(userID, date, trail, distance);
+      updateChart(userID);
     }
   }
 
@@ -113,6 +115,7 @@ window.onload = function() {
 
     if (validateGet(date, trail)) {
       removeData(userID, date, trail);
+      updateChart(chart, userID);
     }
   }
 }
@@ -251,21 +254,10 @@ function isEmptyorSpaces(str){
 async function createChart(uid) {
   const data = await getDataSet(uid);
 
-  const colors = ["#C93226", "#2471C3", "#1EB449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+  
   const mainColor = "#FFFFFF"
 
-  const datasets = []
-  for (let i = 0; i < data.trails.length; i++) {
-    datasets.push({label: data.trails[i], 
-                    data: data.rides[i],
-                    borderColor: colors[i % 8],
-                    backgroundColor: colors[i % 8] + "99",
-                    borderWidth: 3,
-                    hoverBorderWidth: 3,
-                    pointRadius: 6,
-                    pointHoverRadius: 10
-                  })
-  }
+  const datasets = parseData(data)
 
   const ctx = document.getElementById('milesChart');
   const myChart = new Chart(ctx, {
@@ -359,7 +351,35 @@ async function createChart(uid) {
             }
           }
         }
+      }
     }
+  });
+
+  globChart = myChart;
 }
-});
+
+function parseData(data) {
+  const colors = ["#C93226", "#2471C3", "#1EB449", "#D4AC0D", "#AF601A", "#6C3483", "#148F77", "#34495E"]
+  const datasets = []
+  for (let i = 0; i < data.trails.length; i++) {
+    datasets.push({label: data.trails[i], 
+                    data: data.rides[i],
+                    borderColor: colors[i % 8],
+                    backgroundColor: colors[i % 8] + "99",
+                    borderWidth: 3,
+                    hoverBorderWidth: 3,
+                    pointRadius: 6,
+                    pointHoverRadius: 10
+                  })
+  }
+  return datasets;
+}
+
+async function updateChart(uid) {
+  if (globChart === null) {
+    return false;
+  }
+  const data = await getDataSet(uid);
+  globChart.data.datasets = parseData(data);
+  globChart.update();
 }
