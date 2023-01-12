@@ -28,7 +28,8 @@ const auth = getAuth();
 
 // Return instance of the app's FRD
 const db = getDatabase(app);
-
+//Create variable for error message div
+var err = document.getElementById("error")
 // ---------------- Register New Uswer --------------------------------//
 document.getElementById('submitData').onclick = function () {
   const firstName = document.getElementById('firstName').value
@@ -49,10 +50,7 @@ document.getElementById('submitData').onclick = function () {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // alert("User created successfully!")
-    //Add user account info to realtime database
-    //set:  creates new reference or replace existing reference
-    //each new user iwll be placed under the users node
+    
     set(ref(db, 'users/' + user.uid + '/accountInfo'),{
       uid: user.uid,
       email: email,
@@ -62,7 +60,6 @@ document.getElementById('submitData').onclick = function () {
     })
     .then(()=>{
       //Data saved successfully
-      alert('User created successfully!')
       window.location= 'tracker.html'
     })
     .catch((error)=>{
@@ -90,19 +87,24 @@ function validation(firstName, lastName, email, password) {
   let emailRegex = /^\w+@(gmail|ctemc|yahoo){1}\.(com|org){1}$/
 
   if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email) || isEmptyorSpaces(password)) {
-    alert("please complete all fields.")
+    err.textContent = "Please complete all fields."
+    err.style.color = "red"
     return false;
   }
-  if(!fNameRegex.test(firstName)){
-    alert("The first name should only contain letters.")
-    return false
+  if(!fNameRegex.test(firstName)){   
+    err.textContent = "The first name should only contain letters."
+    err.style.color = "red"
+    return false;
   }
   if(!lNameRegex.test(lastName)){
-    alert("The last name should only contain letters.")
+    err.textContent = "The last name should only contain letters."
+    err.style.color = "red"
     return false
+
   }
   if(!emailRegex.test(email)){
-    alert("Please enter a valid email.")
+    err.textContent = "Please enter a valid email."
+    err.style.color = "red"
     return false
   }
   return true
@@ -111,12 +113,10 @@ function validation(firstName, lastName, email, password) {
 // --------------- Password Encryption -------------------------------------//
 
 function encryptPass(password){
-  let encrypted = CryptoJS.AES.encrypt(password, password)
-  return encrypted.toString()
+  let encrypted = CryptoJS.AES.encrypt(password,password)
+  return encrypted.toString();
 }
-
 function decryptPass(password){
-  let decrypted = CryptoJS.AES.decrypt(password, password)
-  return decrypted.toString()
+  let decrypted = CryptoJS.AES.decrypt(password,password)
+  return decrypted.toString();
 }
-

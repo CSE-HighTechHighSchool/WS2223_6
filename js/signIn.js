@@ -24,15 +24,17 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
   const auth = getAuth()
   // return instance of yuor app's firebase real time database (FRD) 
   const db = getDatabase(app)
-
-
+  //Create variable for error message div
+  var err = document.getElementById("error")
 
 // ---------------------- Sign-In User ---------------------------------------//
 document.getElementById('signIn').onclick = function(){
     //get the users email and password for sign in
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
-    
+    // Get the input field
+
+
     //Attempt to sign user in
     signInWithEmailAndPassword(auth,email,password)
     .then((userCredential) =>{
@@ -47,8 +49,7 @@ document.getElementById('signIn').onclick = function(){
         })
         .then(() => {
             //user signed in!
-            alert('User signed in successfully')
-
+         
             //get snapshot of all the user info and pass it to the login() function
             // and stored in saession or local storage
             get(ref(db, 'users/'+user.uid + '/accountInfo')).then((snapshot)=>{
@@ -71,9 +72,7 @@ document.getElementById('signIn').onclick = function(){
         });
     })
     .catch((error)=>{
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
+        err.style.color = "red"
     });
 
 }
@@ -93,7 +92,7 @@ function logIn(user){
     else{
         localStorage.setItem('keepLoggedIn','yes')
         localStorage.setItem('user', JSON.stringify(user));
-        window.location = "home.html"; //browser redirect to home page
+        window.location = "tracker.html"; //browser redirect to home page
     }
 
 
