@@ -372,7 +372,7 @@ function parseData(data) {
                     backgroundColor: colors[i % 8] + "99",
                     borderWidth: 3,
                     hoverBorderWidth: 3,
-                    pointRadius: 6,
+                    pointRadius: 8,
                     pointHoverRadius: 10
                   })
   }
