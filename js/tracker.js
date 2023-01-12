@@ -118,6 +118,10 @@ window.onload = function() {
       updateChart(chart, userID);
     }
   }
+
+  document.getElementById('signOut').onclick = function() {
+    signOutUser()
+  }
 }
 
 

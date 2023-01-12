@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <section class="signInPage" style="height:700px;">
+    <section class="signInPage" style="height:713px;">
 
         <nav class="navbar navbar-expand-lg nb-bg-color " style="z-index:50;">
             <div class="container">
@@ -57,16 +57,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-11 m-auto ">
-                    <div class="card d-flex flex-row  mt-5 bg-secondary ">
+                    <div class="card d-flex flex-row bg-transparent rounded " style="margin-top: 7%">
 
-                        <img class="signinimage" src="/img/mountainsignin.jpg" style="height:400px; width:600px">
+                        <img class="signinimage" src="/img/mountainsignin.jpg" style="height:500px; width:700px">
 
-                        <div class="d-flex  justify-content-center align-items-center nb-bg-color flex-column flex-grow-1">
+                        <div class="d-flex justify-content-center align-items-center nb-bg-color flex-column flex-grow-1">
 
 
                             <div class="signin-card-body ">
-                                <div class="card-title text-black align-self-baseline">
-                                    <h3 class="text-center text-light py-2 font-weight-bold mb-0 mt-2">Sign-In</h3>
+                                <div class="card-title text-black align-self-baseline ">
+                                    <h3 class="text-center text-light py-2 font-weight-bold mb-3 mt-5">Sign-In</h3>
                                 </div>
                                 <form>
                                     <input type="email" placeholder="Email" id="loginEmail"
@@ -74,15 +74,16 @@
                                     <input type="password" placeholder="Password" id="loginPassword"
                                         class="form-control mb-4 w-100">
                                     <div class="form-check form-switch mb-4">
-                                        <input class="form-check-input " type="checkbox" role="switch"
+                                        <input class="form-check-input" type="checkbox" role="switch"
                                             id="keepLoggedInSwitch">
-                                        <label class="form-check-label text-light" for="flexSwitchCheckDefault">Keep me
+                                        <label class="form-check-label text-light" for="keepLoggedInSwitch">Keep me
                                             signed in</label>
                                     </div>
                                     <button type="button" id="signIn" name="signIn"
                                         class="btn text-light btn-light btn-outline-light  mb-3 w-100" style="background-color:var(--timelinepath);">Sign In</button>
                                     <a href="register.html" class="badge text-light mb-3 py-1 w-100">Don't have an
                                         account?</a>
+                                    <div id="error" style="color:var(--timelinepath);">The email or password is incorrect</div>
 
                                     
 
