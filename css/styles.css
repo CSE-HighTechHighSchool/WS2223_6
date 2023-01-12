@@ -414,8 +414,14 @@
 .signInPage,.registerPage {
     overflow:hidden;
     background-color: var(--websitecolor);
+ 
+
 }
 body {
+    background-color: var(--websitecolor);
+} 
+
+ html {
     background-color: var(--websitecolor);
 }
 /* ----------------------------- Map CSS ----------------------------- */
