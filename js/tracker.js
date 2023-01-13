@@ -65,7 +65,7 @@ function signOutUser() {
     // An error happened.
   });
 
-  window.location = 'home.html'
+  window.location = '../index.html'
 }
 
 
@@ -187,11 +187,12 @@ async function getDataSet(userID) {
         }
       });
     } else {
-      alert('No data found')
+      setError("error-chart", "No data found");
     }
   })
   .catch((error) => {
-    alert('unsuccessful, error ' + error);
+    setError("error-chart", error);
+    return false;
   });
 
   return {trails, rides};
@@ -255,11 +256,18 @@ function isEmptyorSpaces(str){
 // ----------------------------- Chart.js ----------------------------------//
 async function createChart(uid) {
   const data = await getDataSet(uid);
+  console.log(data);
+  const mainColor = "#FFFFFF";
 
-  
-  const mainColor = "#FFFFFF"
-
-  const datasets = parseData(data)
+  let datasets = null;
+  if (data === false || data.trails.length === 0) {
+    // No data
+    datasets = {}
+    document.getElementById("chart-div").style.display = "none";
+  } else {
+    // Yes data
+    datasets = parseData(data)
+  }
 
   const ctx = document.getElementById('milesChart');
   const myChart = new Chart(ctx, {
@@ -382,7 +390,17 @@ async function updateChart(uid) {
     return false;
   }
   const data = await getDataSet(uid);
-  globChart.data.datasets = parseData(data);
+  if (data === false || data.trails.length === 0) {
+    // No data
+    console.log("remove chart");
+    globChart.data.datasets = {}
+    document.getElementById("chart-div").style.display = "none";
+  } else {
+    // Yes data
+    globChart.data.datasets = parseData(data);
+    document.getElementById("chart-div").style.display = "inline";
+    clearError("error-chart")
+  }
   globChart.update();
 }
 
@@ -401,5 +419,6 @@ function setSuccess(id, message) {
 }
 
 function clearError(id) {
-  setError(id, "");
+  let element = document.getElementById(id);
+  element.innerHTML = "";
 }

@@ -1051,12 +1051,17 @@ body {
     padding: 2%;
     margin-bottom: 5%;
     border-radius: 5px;
-    border:rgba(62, 62, 62, 0.6) solid 1px
+    border:rgba(62, 62, 62, 0.6) solid 1px;
 }
 
 .tracker-card-body {
     padding-bottom: 5%;
     width: 70%;
+}
+
+#error-chart {
+    font-size: 20px;
+    padding-top: 15px;
 }
   
 /* ---------Register CSS---------- */
