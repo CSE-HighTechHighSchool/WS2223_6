@@ -1039,7 +1039,7 @@ body {
 .signin-card-body{
     height:400px;
 }
-/*--------Tracker and Register Page------*/
+/*--------Tracker CSS ------*/
 #distance-get{
     font-size: 15px;
     font-weight: 400;
@@ -1052,6 +1052,11 @@ body {
     margin-bottom: 5%;
     border-radius: 5px;
     border:rgba(62, 62, 62, 0.6) solid 1px
+}
+
+.tracker-card-body {
+    padding-bottom: 5%;
+    width: 70%;
 }
   
 /* ---------Register CSS---------- */

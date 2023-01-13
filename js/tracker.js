@@ -115,7 +115,7 @@ window.onload = function() {
 
     if (validateGet(date, trail)) {
       removeData(userID, date, trail);
-      updateChart(chart, userID);
+      updateChart(userID);
     }
   }
 
@@ -132,10 +132,10 @@ function updateData(userID, date, trail, distance) {
     [date]: distance
   })
   .then(() => {
-    alert('Data updated successfully.');
+    setSuccess("error-set", "Data updated successfully")
   })
   .catch((error) => {
-    alert('There was an error. Error: ' + error);
+    setError("error-set", 'Error: ' + error);
   })
 }
 
@@ -149,13 +149,13 @@ function getData(userID, date, trail) {
   get(child(dbref, 'users/' + userID + '/data/' + trail)).then((snapshot) => {
     if (snapshot.exists()) {
       milesVal.innerHTML = "Miles Ridden: " + snapshot.val()[date];
-      console.log(snapshot.val()[date])
+      setSuccess("error-get", "Data fetched successfully");
     } else {
-      alert('No data found');
+      setError("error-get", 'No data found');
     }
   })
   .catch((error) => {
-    alert(error);
+    setError("error-set", 'Error: ' + error);
   })
 }
 
@@ -197,16 +197,14 @@ async function getDataSet(userID) {
   return {trails, rides};
 }
 
-// --------------------Get a trail's data for the table ----------------------
-
 
 // -------------------------Delete a day's data from FRD ---------------------
 function removeData(userID, date, trail) {
   remove(ref(db, 'users/' + userID + '/data/' + trail + '/' + date)).then(() => {
-    alert('Data removed successfully');
+    setSuccess("error-get", "Data removed successfully");
   })
   .catch((error) => {
-    alert(error)
+    setError("error-get", 'Error: ' + error);
   })
 }
 
@@ -218,12 +216,12 @@ function removeData(userID, date, trail) {
 function validate(date, trail, distance) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail) 
     || isEmptyorSpaces(distance)) {
-      alert("Please complete all fields.");
+      setError("error-set", "Please complete all fields");
       return false;
   }
 
   if (!isNumeric(distance)) {
-    alert("The distance must be a number")
+    setError("error-set", "Distance must be a number");
     return false;
   }
 
@@ -232,7 +230,7 @@ function validate(date, trail, distance) {
 
 function validateGet(date, trail) {
   if (isEmptyorSpaces(date) || isEmptyorSpaces(trail)) {
-      alert("Please complete all fields.");
+    setError("error-get", "Please complete all fields");
       return false;
   }
 
@@ -331,7 +329,7 @@ async function createChart(uid) {
             color: mainColor,
             text: 'Your Rides',
             font: {
-                size: 24
+                size: 30
             },
             padding: {
                 top: 10,
@@ -386,4 +384,22 @@ async function updateChart(uid) {
   const data = await getDataSet(uid);
   globChart.data.datasets = parseData(data);
   globChart.update();
+}
+
+
+// ----------------------- Custom error messages ----------------
+function setError(id, error) {
+  let element = document.getElementById(id);
+  element.style.color = "red";
+  element.innerHTML = error;
+}
+
+function setSuccess(id, message) {
+  let element = document.getElementById(id);
+  element.style.color = "lightgreen";
+  element.innerHTML = message;
+}
+
+function clearError(id) {
+  setError(id, "");
 }

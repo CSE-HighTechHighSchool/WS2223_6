@@ -70,13 +70,8 @@
         <div class="row">
             <div class="col-lg-11 m-auto ">
                 <div class="card d-flex flex-row  mt-5 bg-secondary ">
-
-                    
-
                     <div class="d-flex justify-content-center align-items-center nb-bg-color flex-column flex-grow-1">
-
-
-                        <div class="signin-card-body ">
+                        <div class="tracker-card-body d-flex flex-column justify-content-center">
                             <div class="card-title text-black align-self-baseline">
                                 <h3 class="text-center text-light py-2 font-weight-bold mb-0 mt-5">Add Your Ride</h3>
                             </div>
@@ -85,10 +80,11 @@
                                 <input class="form-control mb-4 w-100" type="text" placeholder="Trail" id="trail">
                                 <input class="form-control mb-4 w-100" type="text" placeholder="Route Distance (mi)" id="distance">
                                 <button type = "button" id="set" name="set" class="btn text-light btn-light btn-outline-light  mb-3 w-100" style="background-color:var(--timelinepath);">Update</button>
-                            </form>    
+                            </form>
+                            <p id="error-set" class="tracker-error text-center"></p>    
                         </div>
                     </div>
-                    <img class="signinimage" src="/img/updatedata.jpg" style="height:400px; width:600px">
+                    <img class="signinimage" src="/img/updatedata.jpg" style="height:500px; width:750px">
                 </div>
             </div>
         </div>
@@ -98,13 +94,8 @@
         <div class="row">
             <div class="col-lg-11 m-auto ">
                 <div class="card d-flex flex-row  mt-5 bg-secondary ">
-
-                    
-
                     <div class="d-flex justify-content-center align-items-center nb-bg-color flex-column flex-grow-1">
-
-
-                        <div class="signin-card-body ">
+                        <div class="tracker-card-body d-flex flex-column justify-content-center">
                             <div class="card-title text-black align-self-baseline">
                                 <h3 class="text-center text-light py-2 font-weight-bold mb-0 mt-5">Get or Remove Your Ride</h3>
                             </div>
@@ -114,10 +105,11 @@
                                 <button type = "button" id="get" name="get" class="btn text-light btn-light btn-outline-light  mb-3 w-100" style="background-color:var(--timelinepath);">Get Ride</button>
                                 <button type = "button" id="remove" name="remove" class="btn text-light btn-light btn-outline-light  mb-3 w-100" style="background-color:var(--timelinepath);">Remove Ride</button>
                             </form>     
-                            <p id="distance-get">Miles Ridden:</p>  
+                            <p id="distance-get">Miles Ridden:</p>
+                            <p id="error-get" class="tracker-error text-center"></p>      
                         </div>
                     </div>
-                    <img class="signinimage" src="/img/getdata.jpg" style="height:400px; width:600px">
+                    <img class="signinimage" src="/img/getdata.jpg" style="height:500px; width:750px">
 
                 </div>
             </div>
