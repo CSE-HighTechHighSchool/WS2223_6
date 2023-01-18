@@ -60,7 +60,7 @@ document.getElementById('submitData').onclick = function () {
     })
     .then(()=>{
       //Data saved successfully
-      window.location= 'tracker.html'
+      logIn(user);
     })
     .catch((error)=>{
       alert(error)
@@ -119,4 +119,10 @@ function encryptPass(password){
 function decryptPass(password){
   let decrypted = CryptoJS.AES.decrypt(password,password)
   return decrypted.toString();
+}
+
+// ---------------- Login -----------------------//
+function logIn(user){
+  sessionStorage.setItem('user', JSON.stringify(user));
+  window.location = "tracker.html"; //browser redirect to home page
 }
